@@ -49,7 +49,7 @@ async def bot_sys_stats():
     return stats
 
 
-@app.on_message(filters.command("stats") & ~filters.edited)
+@app.on_message(filters.command("vcstats") & ~filters.edited)
 async def gstats(_, message):
     start = datetime.now()
     try:
@@ -58,7 +58,7 @@ async def gstats(_, message):
         pass
     uptime = await bot_sys_stats()
     response = await message.reply_photo(
-        photo="Utils/Query.jpg", caption="Getting Stats!"
+        photo="https://telegra.ph/file/ef1b6f1dd3b68a8f08bcb.jpg", caption="Getting Stats!"
     )
     end = datetime.now()
     resp = (end - start).microseconds / 1000
