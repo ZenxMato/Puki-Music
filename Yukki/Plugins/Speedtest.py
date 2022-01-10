@@ -17,15 +17,15 @@ __HELP__ = """
 """
 
 
-@app.on_message(filters.command("speedtest") & ~filters.edited)
+@app.on_message(filters.command("vcspeedtest") & ~filters.edited)
 async def statsguwid(_, message):
-    m = await message.reply_text("Running Speed test")
+    m = await message.reply_text("`Running Speed test`")
     try:
         test = speedtest.Speedtest()
         test.get_best_server()
-        m = await m.edit("Running Download SpeedTest")
+        m = await m.edit("`Running Download SpeedTest`")
         test.download()
-        m = await m.edit("Running Upload SpeedTest")
+        m = await m.edit("`Running Upload SpeedTest`")
         test.upload()
         test.results.share()
         result = test.results.dict()
