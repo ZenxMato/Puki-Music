@@ -17,20 +17,12 @@ from Yukki.Inline import (add_genre_markup, check_genre_markup, check_markup,
 
 __MODULE__ = "Playlist"
 __HELP__ = """
-
-
 /playplaylist 
 - Start playing Your Saved Playlist.
-
-
 /playlist 
 - Check Your Saved Playlist On Servers.
-
-
 /delmyplaylist
 - Delete any saved music in your playlist
-
-
 /delgroupplaylist
 - Delete any saved music in your group's playlist [Requires Admin Rights.]
 """
@@ -41,7 +33,7 @@ __HELP__ = """
 @PermissionCheck
 @AssistantAdd
 async def play_playlist_cmd(_, message):
-    thumb = "Utils/Playlist.jpg"
+    thumb = "https://telegra.ph/file/c73e81e111f39c28b35c6.jpg"
     await message.delete()
     if not message.reply_to_message:
         if len(message.command) == 2:
@@ -161,13 +153,13 @@ options = [
 ]
 
 options_Genre = [
-    "Rock",
-    "Sad",
-    "Party",
-    "Lofi",
+    "Sinhala",
+    "Rap",
+    "English",
+    "Love",
     "Bollywood",
     "Hollywood",
-    "Punjabi",
+    "Indian",
     "Others",
 ]
 
