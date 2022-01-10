@@ -11,24 +11,20 @@ from Yukki import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
 from Yukki.Decorators.permission import PermissionCheck
 from Yukki.Inline import song_download_markup, song_markup
 from Yukki.Utilities.url import get_url
-from Yukki.Utilities.youtube import get_yt_info_query, get_yt_info_query_slider
+from Yukki.Utilities.youtube import (get_yt_info_query,
+                                     get_yt_info_query_slider)
 
 loop = asyncio.get_event_loop()
 
 __MODULE__ = "Song"
 __HELP__ = """
-
-
 /song [Youtube URL or Search Query] 
 - Download the particular query in audio or video format.
-
-
-
 """
 
 
 @app.on_message(
-    filters.command(["song", f"song@{BOT_USERNAME}"]) & filters.group
+    filters.command(["song", f"video"]) & filters.group
 )
 @PermissionCheck
 async def play(_, message: Message):
@@ -39,7 +35,7 @@ async def play(_, message: Message):
     await message.delete()
     url = get_url(message)
     if url:
-        mystic = await message.reply_text("🔄 Processing URL... Please Wait!")
+        mystic = await message.reply_text("🔍 **Searching...**")
         query = message.text.split(None, 1)[1]
         (
             title,
@@ -54,7 +50,7 @@ async def play(_, message: Message):
         buttons = song_download_markup(videoid, message.from_user.id)
         return await message.reply_photo(
             photo=thumb,
-            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"🏷Name: **{title}\n\n⏱Duration:** {duration_min} Mins\n\n💡[Check music information](https://t.me/{BOT_USERNAME}?start=info_{videoid})",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     else:
@@ -80,7 +76,7 @@ async def play(_, message: Message):
         )
         return await message.reply_photo(
             photo=thumb,
-            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"🏷Name: **{title}\n\n⏱Duration:** {duration_min} Mins\n\n💡[Check music information](https://t.me/{BOT_USERNAME}?start=info_{videoid})",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
 
@@ -131,7 +127,7 @@ async def song_right(_, CallbackQuery):
         )
         med = InputMediaPhoto(
             media=thumb,
-            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"🏷Name: **{title}\n\n⏱Duration:** {duration_min} Mins\n\n💡[Check music information](https://t.me/{BOT_USERNAME}?start=info_{videoid})",
         )
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
@@ -156,7 +152,7 @@ async def song_right(_, CallbackQuery):
         )
         med = InputMediaPhoto(
             media=thumb,
-            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"🏷Name: **{title}\n\n⏱Duration:** {duration_min} Mins\n\n💡[Check music information](https://t.me/{BOT_USERNAME}?start=info_{videoid})",
         )
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
