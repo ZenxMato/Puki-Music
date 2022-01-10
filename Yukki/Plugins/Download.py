@@ -20,13 +20,10 @@ flex = {}
 
 __MODULE__ = "Global Ban"
 __HELP__ = """
-
 **Note:**
 Only for Sudo Users.
-
 /gban [Username or Reply to a user]
 - Ban a user globally in Bot's Served Chats and prevents user from using bot commands.
-
 /ungban [Username or Reply to a user]
 - Remove a user from Bot's GBan List.
 """
@@ -50,10 +47,7 @@ async def getspy(_, CallbackQuery):
     callback_request = callback_data.split(None, 1)[1]
     type, videoid, user_id = callback_request.split("|")
     key = await get_formats(CallbackQuery, videoid, user_id, type)
-    try:
-        await CallbackQuery.edit_message_reply_markup(reply_markup=key)
-    except:
-        pass
+    await CallbackQuery.edit_message_reply_markup(reply_markup=key)
 
 
 @app.on_callback_query(filters.regex(pattern=r"ytdata"))
@@ -64,10 +58,7 @@ async def ytdata(_, CallbackQuery):
     type, format, videoid = callback_request.split("||")
     user_id = CallbackQuery.from_user.id
     key = get_type(type, format, videoid, user_id)
-    try:
-        await CallbackQuery.edit_message_reply_markup(reply_markup=key)
-    except:
-        pass
+    await CallbackQuery.edit_message_reply_markup(reply_markup=key)
 
 
 inl = InlineKeyboardMarkup(
@@ -109,7 +100,7 @@ async def boom(_, CallbackQuery):
     user_id = CallbackQuery.from_user.id
     type, format_id, videoid = callback_request.split("||")
     mystic = await CallbackQuery.edit_message_text(
-        "Download Started\n\nDownloading speed could be slow. Please hold on..",
+        "Download Started\n\nDownloading speed could be slow.",
         reply_markup=inl,
     )
     yturl = f"https://www.youtube.com/watch?v={videoid}"
@@ -121,16 +112,13 @@ async def boom(_, CallbackQuery):
         thumb_image_path = result["thumbnails"][0]["url"]
         channel = channel = result["channel"]["name"]
         fetched = f"""
-🔍**Track Downloaded**
-
-❇️**Title:** {title}
-
-⏳**Duration:** {duration} Mins
-👀**Views:** `{views}`
-🎥**Channel Name:** {channel}
-🔗**Video Link:** [Link]({yturl})
-
-⚡️ __Youtube Inline Download Powered By {MUSIC_BOT_NAME}__"""
+**Track Downloaded**
+**Title:** {title}
+✘**Duration:** {duration} Mins
+✘**Views:** `{views}`
+✘**Channel Name:** {channel}
+✘**Video Link:** [Link]({yturl})
+ __Youtube Inline Download Powered By {MUSIC_BOT_NAME}__"""
     filext = "%(title)s.%(ext)s"
     userdir = os.path.join(os.getcwd(), "downloads", str(user_id))
     if not os.path.isdir(userdir):
