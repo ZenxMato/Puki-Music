@@ -19,7 +19,7 @@ from Yukki.Decorators.checker import checker
 from Yukki.Decorators.logger import logging
 from Yukki.Decorators.permission import PermissionCheck
 from Yukki.Inline import (livestream_markup, playlist_markup, search_markup,
-                          search_markup2, url_markup, url_markup2)
+                          search_markup2, url_markup, url_markup2,choose_markup)
 from Yukki.Utilities.changers import seconds_to_min, time_to_seconds
 from Yukki.Utilities.chat import specialfont_to_normal
 from Yukki.Utilities.stream import start_stream, start_stream_audio
@@ -203,11 +203,33 @@ async def play(_, message: Message):
             query,
         )
         await mystic.delete()
-        return await message.reply_photo(
+        supun = await message.reply_photo(
           photo=photo,
           caption=caption,
           reply_markup=InlineKeyboardMarkup(buttons)
         )
+        await supun.delete()
+
+@app.on_callback_query(filters.regex(pattern=r"Yukki"))
+async def choose_playmode(_, CallbackQuery):
+    await CallbackQuery.answer()
+    callback_data = CallbackQuery.data.strip()
+    callback_request = callback_data.split(None, 1)[1]
+    videoid, duration, user_id = callback_request.split("|")
+    if CallbackQuery.from_user.id != int(user_id):
+        return await CallbackQuery.answer(
+            "This is not for you! Search You Own Song.", show_alert=True
+        )
+    buttons = choose_markup(videoid, duration, user_id)
+    return await CallbackQuery.edit_message_text("""
+**Do you want to play this as a video?**
+**Or to play as an audio?**
+
+**Select it below**[More Info](https://t.me/szvcbot)
+    """,
+        reply_markup=InlineKeyboardMarkup(buttons)
+    )
+    
 
 #        (
 #            title,
@@ -251,7 +273,6 @@ async def Music_Stream(_, CallbackQuery):
         return await CallbackQuery.edit_message_text(
             """
 **Live Stream Detected**
-
 Want to play live stream? 
 This will stop the current playing musics(if any)
 and will start streaming live video.
