@@ -521,7 +521,14 @@ async def playout_end(pytgclients, chat_id):
                     chat_id,
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"🎥<b>__Started Playing:__</b> {title} \n👤<b>__Requested by:__ </b> {mention}",
+                    caption=f"""
+
+🏷 **Name:** [{title[:25]}](https://www.youtube.com/watch?v={afk}) 
+⏱ **Duration:** `{duration_min}`
+💡 **Status:** `Playing Video`
+🎧** Request by:**{mention}
+
+""",
                 )
                 await start_timer(
                     videoid,
@@ -560,7 +567,11 @@ async def playout_end(pytgclients, chat_id):
                         photo="Utils/Telegram.JPEG",
                         reply_markup=InlineKeyboardMarkup(buttons),
                         caption=(
-                            f"**Video Streaming**\n\n🎥<b>__Started Playing:__ </b>Next Video from Telegram \n👤**__Requested by:__** {mention}"
+                            f"""
+📖 Info: [Get Information](https://t.me/szteambots)
+💡 **Status:** `Playing Video`
+🎧** Request by:**{mention}
+"""
                         ),
                     )
                 else:
@@ -610,7 +621,13 @@ async def playout_end(pytgclients, chat_id):
                         photo=thumb,
                         reply_markup=InlineKeyboardMarkup(buttons),
                         caption=(
-                            f"**Video Streaming**\n\n🎥<b>__Started Playing:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={afk}) \n👤**__Requested by:__** {mention}"
+                            f"""
+🏷 **Name:** [{title[:25]}](https://www.youtube.com/watch?v={afk}) 
+⏱ **Duration:** `{duration_min}`
+💡 **Status:** `Playing Video`
+🎧** Request by:**{mention}
+
+"""
                         ),
                     )
                     os.remove(thumb)
@@ -667,7 +684,14 @@ async def playout_end(pytgclients, chat_id):
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
                     caption=(
-                        f"🎥<b>__Started Playing:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={afk}) \n👤**__Requested by:__** {mention}"
+                        f"""
+
+🏷 **Name:** [{title[:25]}](https://www.youtube.com/watch?v={afk}) 
+⏱ **Duration:** `{duration_min}`
+💡 **Status:** `Playing Video`
+🎧** Request by:**{mention}
+
+"""
                     ),
                 )
                 os.remove(thumb)
