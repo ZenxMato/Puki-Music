@@ -208,7 +208,7 @@ async def play(_, message: Message):
           caption=caption,
           reply_markup=InlineKeyboardMarkup(buttons)
         )
-        await supun.delete()
+       
 
 @app.on_callback_query(filters.regex(pattern=r"Yukki"))
 async def choose_playmode(_, CallbackQuery):
@@ -229,7 +229,7 @@ async def choose_playmode(_, CallbackQuery):
     """,
         reply_markup=InlineKeyboardMarkup(buttons)
     )
-    
+    await supun.delete()
 
 #        (
 #            title,
