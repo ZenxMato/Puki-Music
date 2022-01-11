@@ -103,65 +103,13 @@ async def play_playlist_cmd(_, message):
 @checker
 @PermissionCheck
 @AssistantAdd
-async def playlist(_, message):
-    thumb = "Utils/Playlist.jpg"
-    user_id = message.from_user.id
-    user_name = message.from_user.first_name
-    buttons = check_markup(user_name, user_id, "abcd")
+async def pause_cmd(_, message):
+    thumb ="cache/playlist.png"
     await message.reply_photo(
-        photo=thumb,
-        caption=(
-            f"**{MUSIC_BOT_NAME}'s Playlist Feature**\n\nSelect The Playlist, You want to **check!**"
-        ),
-        reply_markup=InlineKeyboardMarkup(buttons),
-    )
-    return
-
-
-options = [
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-    "12",
-    "13",
-    "14",
-    "15",
-    "all",
-    "16",
-    "17",
-    "18",
-    "19",
-    "20",
-    "21",
-    "22",
-    "23",
-    "24",
-    "25",
-    "26",
-    "27",
-    "28",
-    "29",
-    "30",
-]
-
-options_Genre = [
-    "Sinhala",
-    "Rap",
-    "English",
-    "Love",
-    "Bollywood",
-    "Hollywood",
-    "Indian",
-    "Others",
-]
+    photo=thumb, 
+    caption=("**❓ Which playlist do you want to play ?**"),    
+    reply_markup=play_list_keyboard) 
+    return 
 
 
 @app.on_message(filters.command("delmyplaylist") & filters.group)
