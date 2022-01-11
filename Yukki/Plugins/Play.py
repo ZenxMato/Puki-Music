@@ -5,7 +5,7 @@ from pyrogram import filters
 from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto, Message,
                             Voice)
 from youtube_search import YoutubeSearch
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, InputMediaPhoto
 import Yukki
 from Yukki import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
                    MUSIC_BOT_NAME, app, db_mem)
@@ -221,12 +221,14 @@ async def choose_playmode(_, CallbackQuery):
             "This is not for you! Search You Own Song.", show_alert=True
         )
     buttons = choose_markup(videoid, duration, user_id)
-    return await CallbackQuery.edit_message_text("""
-**Do you want to play this as a video?**
+    photo="https://telegra.ph/file/5dc0a19059a06978580f7.jpg"
+    picmetext = """
+🎭 **Do you want to play this as a video?**
 **Or to play as an audio?**
 
 **Select it below**[More Info](https://t.me/szvcbot)
-    """,
+    """
+    return await CallbackQuery.edit_message_media(InputMediaPhoto(media=photo, caption=picmetext),
         reply_markup=InlineKeyboardMarkup(buttons)
     )
     await supun.delete()
