@@ -43,18 +43,7 @@ __HELP__ = """
 - Get Settings button.
 """
 
-@app.on_message(filters.command(["help", "start"]) )
-async def useradd(_, message: Message):
-      await message.reply_text(
-            f"""
-Sorry For Inconvenience
-Rose  is Offline For While And we gonna shift it to Heroku  very soon and hope soon Rose will be fast.
 
-❤️Music working 
-
-`Heroku baned`
-"""
-    )
 
 
 @app.on_message(filters.command("settings") & filters.group)
