@@ -42,7 +42,57 @@ __HELP__ = """
 /settings 
 - Get Settings button.
 """
+@app.on_message(filters.new_chat_members, group=welcome_group)
+async def welcome(_, message: Message):
+    chat_id = message.chat.id
+    if await is_served_chat(chat_id):
+        pass
+    else:
+        await add_served_chat(chat_id)
+    for member in message.new_chat_members:
+        try:
+            if member.id == BOT_ID:
+                _assistant = await get_assistant(message.chat.id, "assistant")
+                if not _assistant:
+                    ran_ass = random.choice(random_assistant)
+                    assis = {
+                        "saveassistant": ran_ass,
+                    }
+                    await save_assistant(message.chat.id, "assistant", assis)
+                else:
+                    ran_ass = _assistant["saveassistant"]
+                (
+                    ASS_ID,
+                    ASS_NAME,
+                    ASS_USERNAME,
+                    ASS_ACC,
+                ) = await get_assistant_details(ran_ass)
+                out = start_pannel()
+                await message.reply_text(
+                    f"""
+Thanks for adding me to your group! Don't forget follow
+my news channel @szteambots.
 
+**New to Me, Touch the below button and start me in PM**
+                    """,
+                    reply_markup=InlineKeyboardMarkup(
+            [
+                InlineKeyboardButton("quick start guide", url="http://t.me/szrosebot?start=tutorial"),
+            ])
+            )
+            if member.id in ASSIDS:
+                return await remove_active_chat(chat_id)
+            if member.id in OWNER_ID:
+                return await message.reply_text(
+                    f"{MUSIC_BOT_NAME}'s Owner[{member.mention}] has just joined your chat."
+                )
+            if member.id in SUDOERS:
+                return await message.reply_text(
+                    f"A member of {MUSIC_BOT_NAME}'s Sudo User[{member.mention}] has just joined your chat."
+                )
+            return
+        except:
+            return
 
 
 
