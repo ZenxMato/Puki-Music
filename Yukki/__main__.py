@@ -244,6 +244,12 @@ async def help_command(_, message):
 async def start_command(_, message):
     if len(message.text.split()) > 1:
         name = (message.text.split(None, 1)[1]).lower()
+        if name[0] == "s":
+            text = """Give me some thing !
+`/pyrogram` 
+    or 
+`/telethon`"""
+            await message.reply_text(text)
         if name[0] == "i":
             m = await message.reply_text("🔎 Fetching Info!")
             query = (str(name)).replace("info_", "", 1)
