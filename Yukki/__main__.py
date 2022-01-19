@@ -244,32 +244,6 @@ async def help_command(_, message):
 async def start_command(_, message):
     if len(message.text.split()) > 1:
         name = (message.text.split(None, 1)[1]).lower()
-        if name[0] == "s":
-            sudoers = await get_sudoers()
-            text = "**__Sudo Users List of Bot:-__**\n\n"
-            j = 0
-            for count, user_id in enumerate(sudoers, 1):
-                try:
-                    user = await app.get_users(user_id)
-                    user = (
-                        user.first_name if not user.mention else user.mention
-                    )
-                except Exception:
-                    continue
-                text += f"➤ {user}\n"
-                j += 1
-            if j == 0:
-                await message.reply_text("No Sudo Users")
-            else:
-                await message.reply_text(text)
-        if name == "help":
-            text, keyboard = await help_parser(message.from_user.mention)
-            await message.delete()
-            return await app.send_text(
-                message.chat.id,
-                text,
-                reply_markup=keyboard,
-            )
         if name[0] == "i":
             m = await message.reply_text("🔎 Fetching Info!")
             query = (str(name)).replace("info_", "", 1)
