@@ -34,16 +34,11 @@ loop = asyncio.get_event_loop()
 
 __MODULE__ = "VideoCalls"
 __HELP__ = f"""
-
 /play [Reply to any Video] or [YT Link] or [Music Name]
 - Stream Video on Voice Chat
-
 **For Sudo User:-**
-
 /set_video_limit [Number of Chats]
 - Set a maximum Number of Chats allowed for Video Calls at a time.
-
-
 """
 
 
@@ -67,17 +62,6 @@ async def quality_markup(_, CallbackQuery):
             )
     if CallbackQuery.message.chat.id not in db_mem:
         db_mem[CallbackQuery.message.chat.id] = {}
-    try:
-        read1 = db_mem[CallbackQuery.message.chat.id]["live_check"]
-        if read1:
-            return await CallbackQuery.answer(
-                "Live Streaming Playing...Stop it to play music",
-                show_alert=True,
-            )
-        else:
-            pass
-    except:
-        pass
     await CallbackQuery.answer()
     callback_data = CallbackQuery.data.strip()
     callback_request = callback_data.split(None, 1)[1]
