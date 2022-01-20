@@ -24,7 +24,7 @@ __HELP__ = """
 
 
 @app.on_message(
-    filters.command(["song", f"video"]) & filters.group
+    filters.command(["fullsong", f"fullvideo"]) & filters.group
 )
 @PermissionCheck
 async def play(_, message: Message):
