@@ -362,7 +362,7 @@ async def update_(client, message):
     return
 
 
-@app.on_message(filters.command("restart") & filters.user(SUDOERS))
+@app.on_message(filters.command("vcrestart") & filters.user(SUDOERS))
 async def restart_(_, message):
     response = await message.reply_text("Restarting....")
     if await is_heroku():
