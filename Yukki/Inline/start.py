@@ -8,22 +8,22 @@ from Yukki import BOT_USERNAME
 def setting_markup2():
     buttons = [
         [
-            InlineKeyboardButton(text="🔈 Audio Quality", callback_data="AQ"),
-            InlineKeyboardButton(text="🎚 Audio Volume", callback_data="AV"),
+            InlineKeyboardButton(text="⚙️ Quality", callback_data="AQ"),
+            InlineKeyboardButton(text="🔔 Volume", callback_data="AV"),
         ],
         [
             InlineKeyboardButton(
-                text="👥 Authorized Users", callback_data="AU"
+                text="👮‍♀️ Authorized Users", callback_data="AU"
             ),
             InlineKeyboardButton(
-                text="💻 Dashboard", callback_data="Dashboard"
+                text="🖥 Dashboard", callback_data="Dashboard"
             ),
         ],
         [
-            InlineKeyboardButton(text="✖️ Close", callback_data="close"),
+            InlineKeyboardButton(text="Close 🗑", callback_data="close"),
         ],
     ]
-    return f"🔧  **{MUSIC_BOT_NAME} Settings**", buttons
+    return f"⚒  **Rose Bot VC Settings**", buttons
 
 
 def start_pannel():
@@ -187,48 +187,47 @@ def private_panel():
 def setting_markup():
     buttons = [
         [
-            InlineKeyboardButton(text="🔈 Audio Quality", callback_data="AQ"),
-            InlineKeyboardButton(text="🎚 Audio Volume", callback_data="AV"),
+            InlineKeyboardButton(text="⚙️ Quality", callback_data="AQ"),
+            InlineKeyboardButton(text="🔔 Volume", callback_data="AV"),
         ],
         [
             InlineKeyboardButton(
-                text="👥 Authorized Users", callback_data="AU"
+                text="👮‍♀️ Authorized Users", callback_data="AU"
             ),
             InlineKeyboardButton(
-                text="💻 Dashboard", callback_data="Dashboard"
+                text="🖥 Dashboard", callback_data="Dashboard"
             ),
         ],
         [
-            InlineKeyboardButton(text="✖️ Close", callback_data="close"),
-            InlineKeyboardButton(text="🔙 Go Back", callback_data="okaybhai"),
+            InlineKeyboardButton(text="Close 🗑", callback_data="close"),
         ],
     ]
-    return f"🔧  **{MUSIC_BOT_NAME} Settings**", buttons
+    return f"⚒  **Rose Bot VC Settings**", buttons
 
 
 def volmarkup():
     buttons = [
         [
             InlineKeyboardButton(
-                text="🔄 Reset Audio Volume 🔄", callback_data="HV"
+                text="🕒 Reset Audio Volume", callback_data="HV"
             )
         ],
         [
-            InlineKeyboardButton(text="🔈 Low Vol", callback_data="LV"),
-            InlineKeyboardButton(text="🔉 Medium Vol", callback_data="MV"),
+            InlineKeyboardButton(text="•Low Vol•", callback_data="LV"),
+            InlineKeyboardButton(text="•Medium Vol•", callback_data="MV"),
         ],
         [
-            InlineKeyboardButton(text="🔊 High Vol", callback_data="HV"),
-            InlineKeyboardButton(text="🔈 Amplified Vol", callback_data="VAM"),
+            InlineKeyboardButton(text="•High Vol•", callback_data="HV"),
+            InlineKeyboardButton(text="•Amplified Vol•", callback_data="VAM"),
         ],
         [
             InlineKeyboardButton(
-                text="🔽 Custom Volume 🔽", callback_data="Custommarkup"
+                text="🛠 Custom Volume 🛠", callback_data="Custommarkup"
             )
         ],
         [InlineKeyboardButton(text="🔙 Go back", callback_data="settingm")],
     ]
-    return f"🔧  **{MUSIC_BOT_NAME} Settings**", buttons
+    return f"⚒  **Rose Bot VC Settings**", buttons
 
 
 def custommarkup():
@@ -245,9 +244,9 @@ def custommarkup():
             InlineKeyboardButton(text="+50", callback_data="PFZ"),
             InlineKeyboardButton(text="-50", callback_data="MFZ"),
         ],
-        [InlineKeyboardButton(text="🔼Custom Volume 🔼", callback_data="AV")],
+        [InlineKeyboardButton(text="🛠 Custom Volume 🛠", callback_data="AV")],
     ]
-    return f"🔧  **{MUSIC_BOT_NAME} Settings**", buttons
+    return f"⚒  **Rose Bot VC Settings**", buttons
 
 
 def usermarkup():
@@ -263,7 +262,7 @@ def usermarkup():
         ],
         [InlineKeyboardButton(text="🔙 Go back", callback_data="settingm")],
     ]
-    return f"🔧  **{MUSIC_BOT_NAME} Settings**", buttons
+    return f"⚒  **Rose Bot VC Settings**  ", buttons
 
 
 def dashmarkup():
@@ -278,4 +277,4 @@ def dashmarkup():
         ],
         [InlineKeyboardButton(text="🔙 Go back", callback_data="settingm")],
     ]
-    return f"🔧  **{MUSIC_BOT_NAME} Settings**", buttons
+    return f"⚒  **Rose Bot VC Settings** ", buttons
