@@ -52,23 +52,7 @@ async def welcome(_, message: Message):
     for member in message.new_chat_members:
         try:
             if member.id == BOT_ID:
-                _assistant = await get_assistant(message.chat.id, "assistant")
-                if not _assistant:
-                    ran_ass = random.choice(random_assistant)
-                    assis = {
-                        "saveassistant": ran_ass,
-                    }
-                    await save_assistant(message.chat.id, "assistant", assis)
-                else:
-                    ran_ass = _assistant["saveassistant"]
-                (
-                    ASS_ID,
-                    ASS_NAME,
-                    ASS_USERNAME,
-                    ASS_ACC,
-                ) = await get_assistant_details(ran_ass)
-                out = start_pannel()
-                await message.reply_text(
+                 return await message.reply_text(
                     f"""
 Thanks for adding me to your group! Don't forget follow
 my news channel @szteambots.
@@ -80,15 +64,13 @@ my news channel @szteambots.
                 InlineKeyboardButton("quick start guide", url="http://t.me/szrosebot?start=tutorial"),
             ])
             )
-            if member.id in ASSIDS:
-                return await remove_active_chat(chat_id)
             if member.id in OWNER_ID:
                 return await message.reply_text(
-                    f"{MUSIC_BOT_NAME}'s Owner[{member.mention}] has just joined your chat."
+                    f"{MUSIC_BOT_NAME}'s Owner{member.mention} has just joined your chat."
                 )
             if member.id in SUDOERS:
                 return await message.reply_text(
-                    f"A member of {MUSIC_BOT_NAME}'s Sudo User[{member.mention}] has just joined your chat."
+                    f"A member of {MUSIC_BOT_NAME}'s Sudo User {member.mention} has just joined your chat."
                 )
             return
         except:
@@ -96,7 +78,7 @@ my news channel @szteambots.
 
 
 
-@app.on_message(filters.command("settings") & filters.group)
+@app.on_message(filters.command("vcsettings") & filters.group)
 @PermissionCheck
 async def settings(_, message: Message):
     c_id = message.chat.id
