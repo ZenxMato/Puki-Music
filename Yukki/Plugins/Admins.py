@@ -70,9 +70,6 @@ Only for Sudo Users
 @AdminRightsCheck
 @checker
 async def admins(_, message: Message):
-    global get_queue
-    if not len(message.command) == 1:
-        return await message.reply_text("Error! Wrong Usage of Command.")
     if not await is_active_chat(message.chat.id):
         return await message.reply_text("Nothing is playing on voice chat.")
     chat_id = message.chat.id
