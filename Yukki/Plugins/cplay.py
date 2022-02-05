@@ -46,7 +46,7 @@ FSUBB = InlineKeyboardMarkup(
 
 
 @app.on_message(
-    filters.command(["play", f"play@{BOT_USERNAME}","vplay", f"vplay@{BOT_USERNAME}"]) & filters.group
+    filters.command(["cplay", f"cplay@{BOT_USERNAME}","cvplay", f"cvplay@{BOT_USERNAME}"]) & filters.group
 )
 @checker
 @PermissionCheck
