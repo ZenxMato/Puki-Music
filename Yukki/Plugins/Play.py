@@ -40,7 +40,7 @@ JOIN_ASAP = f"⛔️** Access Denied **⛔️\n\n🙋‍♂️ Hey There , You M
 
 FSUBB = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton(text="Sz Team Bots <sz/>", url=f"https://t.me/szteambots") 
+        InlineKeyboardButton(text="Channel<sz/>", url=f"https://t.me/zenzu_restore") 
         ]]
     )
 
