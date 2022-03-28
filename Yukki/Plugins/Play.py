@@ -218,7 +218,6 @@ async def choose_playmode(_, CallbackQuery):
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
         )
-    await supun.delete()
 
 #        (
 #            title,
