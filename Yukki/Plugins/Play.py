@@ -210,13 +210,13 @@ async def choose_playmode(_, CallbackQuery):
     if CallbackQuery.from_user.id != int(user_id):
         return await CallbackQuery.answer(
             "This is not for you! Search You Own Song.", show_alert=True
-        )
+        (
             title,
             duration_min,
             duration_sec,
             thumb,
             videoid,
-        )
+        ) = get_yt_info_query(query)
     buttons = choose_markup(videoid, duration, user_id)
     photo=thumb,
     picmetext = """
