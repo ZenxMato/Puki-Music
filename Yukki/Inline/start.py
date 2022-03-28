@@ -23,7 +23,7 @@ def setting_markup2():
             InlineKeyboardButton(text="Close 🗑", callback_data="close"),
         ],
     ]
-    return f"⚒  **Rose Bot VC Settings**", buttons
+    return f"⚒  **Zenzu Musik V2**", buttons
 
 
 def start_pannel():
