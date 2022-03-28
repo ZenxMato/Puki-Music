@@ -229,14 +229,10 @@ async def initiate_bot():
     console.print(f"\n[red]Stopping Bot")
 
 
-home_text_pm = f"""Hello ,
-**Saya Adalah {BOT_NAME}**.
-￣￣￣￣￣￣￣￣￣￣￣￣￣￣
-**𝘉𝘰𝘵 𝘔𝘶𝘴𝘪𝘤 𝘠𝘢𝘯𝘨 𝘛𝘦𝘳𝘴𝘦𝘥𝘪𝘢 𝘋𝘪 𝘛𝘦𝘭𝘦𝘨𝘳𝘢𝘮 𝘜𝘯𝘵𝘶𝘬 𝘔𝘦𝘮𝘣𝘢𝘯𝘵𝘶 𝘈𝘯𝘥𝘢 𝘔𝘦𝘮𝘣𝘢𝘯𝘨𝘶𝘯 𝘎𝘳𝘶𝘱 𝘓𝘦𝘣𝘪𝘩 𝘈𝘴𝘪𝘬**
+home_text_pm = f"""
+**✨ sᴇʟᴀᴍᴀᴛ ᴅᴀᴛᴀɴɢ
 
-➕ 𝗧𝗮𝗺𝗯𝗮𝗵𝗸𝗮𝗻 𝗦𝗮𝘆𝗮 𝗞𝗲 𝗚𝗿𝘂𝗽
-**All commands**: / """
-
+💬 {BOT_NAME} ᴍᴜsɪᴄ ᴍᴇᴍᴜɴɢᴋɪɴᴋᴀɴ ᴀɴᴅᴀ ᴜɴᴛᴜᴋ ᴍᴇᴍᴜᴛᴀʀ ᴍᴜsɪᴋ ᴘᴀᴅᴀ ɢʀᴜᴘ ᴍᴇʟᴀʟᴜɪ ᴏʙʀᴏʟᴀɴ sᴜᴀʀᴀ ʏᴀɴɢ ʙᴀʀᴜ ᴅɪ ᴛᴇʟᴇɢʀᴀᴍ** """
 
 @app.on_message(filters.command("help") & filters.private)
 async def help_command(_, message):
