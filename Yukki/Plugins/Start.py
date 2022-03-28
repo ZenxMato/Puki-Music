@@ -101,7 +101,7 @@ async def useradd(_, message: Message):
     await asyncio.gather(
         message.delete(),
         message.reply_text(
-            f"Thanks for having me in {message.chat.title}.\n{MUSIC_BOT_NAME} is alive.\n\nFor any assistance or help, checkout our support group and channel.",
+            f"**Terimakasih Sudah Mengunakan Bot Ini**.\n**{MUSIC_BOT_NAME} is online** \n**Group: {message.chat.title}** \n**ID Group: {message.chat.id}",
             reply_markup=InlineKeyboardMarkup(out[1]),
         ),
     )
