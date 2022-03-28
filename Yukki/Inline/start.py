@@ -8,15 +8,15 @@ from Yukki import BOT_USERNAME
 def setting_markup2():
     buttons = [
         [
-            InlineKeyboardButton(text="⚙️ Quality", callback_data="AQ"),
-            InlineKeyboardButton(text="🔔 Volume", callback_data="AV"),
+            InlineKeyboardButton(text="💻 ᴅᴀsʜʙᴏᴀʀᴅ", callback_data="Dashboard"),
+            InlineKeyboardButton(text="🔈 ᴠᴏʟᴜᴍᴇ", callback_data="AV"),
         ],
         [
             InlineKeyboardButton(
-                text="👮‍♀️ Authorized Users", callback_data="AU"
+                text="❔ ᴀᴜᴛʜ ᴜsᴇʀs", callback_data="AU"
             ),
             InlineKeyboardButton(
-                text="🖥 Dashboard", callback_data="Dashboard"
+                text="💡 sᴛᴀᴛᴜs", callback_data="AQ"
             ),
         ],
         [
@@ -83,20 +83,15 @@ def start_pannel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="🗂 Helper Commands Menu", callback_data="shikhar"
+                    text="📚 ᴍᴇɴᴜ ʙᴀɴᴛᴜᴀɴ", callback_data="shikhar"
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="🔧 Settings", callback_data="settingm"
-                )
-            ],
-            [
-                InlineKeyboardButton(
-                    text="📨Official Channel", url=f"{SUPPORT_CHANNEL}"
+                    text="ᴄʜᴀɴɴᴇʟ", url=f"{SUPPORT_CHANNEL}"
                 ),
                 InlineKeyboardButton(
-                    text="📨Support Group", url=f"{SUPPORT_GROUP}"
+                    text="ɢʀᴏᴜᴘ", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
@@ -187,7 +182,7 @@ def private_panel():
 def setting_markup():
     buttons = [
         [
-            InlineKeyboardButton(text="⚙️ Quality", callback_data="AQ"),
+            InlineKeyboardButton(text="💻 ᴅᴀsʜʙᴏᴀʀᴅ ", callback_data="Dashboard"),
             InlineKeyboardButton(text="🔔 Volume", callback_data="AV"),
         ],
         [
@@ -195,7 +190,7 @@ def setting_markup():
                 text="👮‍♀️ Authorized Users", callback_data="AU"
             ),
             InlineKeyboardButton(
-                text="🖥 Dashboard", callback_data="Dashboard"
+                text="🖥 Dashboard", callback_data="AQ"
             ),
         ],
         [
