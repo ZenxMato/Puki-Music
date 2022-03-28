@@ -5,7 +5,7 @@ from pyrogram import filters
 from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto, Message,
                             Voice)
 from youtube_search import YoutubeSearch
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, InputMediaPhoto
+
 import Yukki
 from Yukki import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
                    MUSIC_BOT_NAME, app, db_mem)
@@ -19,7 +19,7 @@ from Yukki.Decorators.checker import checker
 from Yukki.Decorators.logger import logging
 from Yukki.Decorators.permission import PermissionCheck
 from Yukki.Inline import (livestream_markup, playlist_markup, search_markup,
-                          search_markup2, url_markup, url_markup2,choose_markup)
+                          search_markup2, url_markup, url_markup2)
 from Yukki.Utilities.changers import seconds_to_min, time_to_seconds
 from Yukki.Utilities.chat import specialfont_to_normal
 from Yukki.Utilities.stream import start_stream, start_stream_audio
@@ -30,41 +30,23 @@ from Yukki.Utilities.videostream import start_stream_video
 from Yukki.Utilities.youtube import (get_yt_info_id, get_yt_info_query,
                                      get_yt_info_query_slider)
 
-
-from pyrogram.errors import UserAlreadyParticipant
-from pyrogram.errors import UserNotParticipant, ChatAdminRequired, UsernameNotOccupied
-
 loop = asyncio.get_event_loop()
-
-JOIN_ASAP = f"⛔️** Access Denied **⛔️\n\n🙋‍♂️ Hey There , You Must Join @szteambots Telegram Channel To Use This BOT. So, Please Join it & Try Again🤗. Thank You 🤝"
-
-FSUBB = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton(text="Channel<sz/>", url=f"https://t.me/zenzu_restore") 
-        ]]
-    )
 
 
 @app.on_message(
-    filters.command(["play", f"play@{BOT_USERNAME}","vplay", f"vplay@{BOT_USERNAME}"]) & filters.group
+    filters.command(["play", f"play@{BOT_USERNAME}"]) & filters.group
 )
 @checker
+@logging
 @PermissionCheck
 @AssistantAdd
 async def play(_, message: Message):
-    try:
-        await message._client.get_chat_member(int("-1001591415615"), message.from_user.id)
-    except UserNotParticipant:
-        await message.reply_text(
-        text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
-    )
-        return 
     await message.delete()
     if message.chat.id not in db_mem:
         db_mem[message.chat.id] = {}
     if message.sender_chat:
         return await message.reply_text(
-            "💡 You're an __Anonymous Admin__ in this Group!\nRevert back to User Account From Admin Rights."
+            "You're an __Anonymous Admin__ in this Chat Group!\nRevert back to User Account From Admin Rights."
         )
     audio = (
         (message.reply_to_message.audio or message.reply_to_message.voice)
@@ -79,9 +61,18 @@ async def play(_, message: Message):
     url = get_url(message)
     if audio:
         mystic = await message.reply_text(
-            "**🔄 processing audio...**"
+            "🔄 Processing Audio... Please Wait!"
         )
-
+        try:
+            read = db_mem[message.chat.id]["live_check"]
+            if read:
+                return await mystic.edit(
+                    "Live Streaming Playing...Stop it to play music"
+                )
+            else:
+                pass
+        except:
+            pass
         if audio.file_size > 1073741824:
             return await mystic.edit_text(
                 "Audio File Size Should Be Less Than 150 mb"
