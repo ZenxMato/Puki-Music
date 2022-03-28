@@ -115,8 +115,8 @@ async def initiate_bot():
             console.print(f"\n[red]Stopping Bot")
             return
         try:
-            await ASS_CLI_1.join_chat("szteamots")
-            await ASS_CLI_1.join_chat("slbotzone")
+            await ASS_CLI_1.join_chat("OfficialYukki")
+            await ASS_CLI_1.join_chat("YukkiSupport")
         except:
             pass
         console.print(f"├[red] Assistant 1 Started as {ASSNAME1}!")
@@ -231,25 +231,72 @@ async def initiate_bot():
 
 home_text_pm = f"""Hello ,
 My name is {BOT_NAME}.
-I'm Telegram Voice Chat Audio with some useful features.
+A Telegram Music+Video Streaming bot with some useful features.
+
 All commands can be used with: / """
 
 
-@app.on_message(filters.command("p") & filters.private)
+@app.on_message(filters.command("help") & filters.private)
 async def help_command(_, message):
     text, keyboard = await help_parser(message.from_user.mention)
     await app.send_message(message.chat.id, text, reply_markup=keyboard)
+
 
 @app.on_message(filters.command("start") & filters.private)
 async def start_command(_, message):
     if len(message.text.split()) > 1:
         name = (message.text.split(None, 1)[1]).lower()
         if name[0] == "s":
-            text = """Give me some thing !
-`/pyrogram` 
-    or 
-`/telethon`"""
-            await message.reply_text(text)
+            sudoers = await get_sudoers()
+            text = "⭐️<u> **Owners:**</u>\n"
+            sex = 0
+            for x in OWNER_ID:
+                try:
+                    user = await app.get_users(x)
+                    user = (
+                        user.first_name if not user.mention else user.mention
+                    )
+                    sex += 1
+                except Exception:
+                    continue
+                text += f"{sex}➤ {user}\n"
+            smex = 0
+            for count, user_id in enumerate(sudoers, 1):
+                if user_id not in OWNER_ID:
+                    try:
+                        user = await app.get_users(user_id)
+                        user = (
+                            user.first_name
+                            if not user.mention
+                            else user.mention
+                        )
+                        if smex == 0:
+                            smex += 1
+                            text += "\n⭐️<u> **Sudo Users:**</u>\n"
+                        sex += 1
+                        text += f"{sex}➤ {user}\n"
+                    except Exception:
+                        continue
+            if not text:
+                await message.reply_text("No Sudo Users")
+            else:
+                await message.reply_text(text)
+            if await is_on_off(5):
+                sender_id = message.from_user.id
+                sender_name = message.from_user.first_name
+                umention = f"[{sender_name}](tg://user?id={int(sender_id)})"
+                return await LOG_CLIENT.send_message(
+                    LOG_GROUP_ID,
+                    f"{message.from_user.mention} has just started bot to check <code>SUDOLIST</code>\n\n**USER ID:** {sender_id}\n**USER NAME:** {sender_name}",
+                )
+        if name == "help":
+            text, keyboard = await help_parser(message.from_user.mention)
+            await message.delete()
+            return await app.send_text(
+                message.chat.id,
+                text,
+                reply_markup=keyboard,
+            )
         if name[0] == "i":
             m = await message.reply_text("🔎 Fetching Info!")
             query = (str(name)).replace("info_", "", 1)
@@ -266,14 +313,17 @@ async def start_command(_, message):
                 published = result["publishedTime"]
             searched_text = f"""
 🔍__**Video Track Information**__
+
 ❇️**Title:** {title}
+
 ⏳**Duration:** {duration} Mins
 👀**Views:** `{views}`
 ⏰**Published Time:** {published}
 🎥**Channel Name:** {channel}
 📎**Channel Link:** [Visit From Here]({channellink})
 🔗**Video Link:** [Link]({link})
-⚡️ __Searched Powered By {BOT_NAME}t__"""
+
+⚡️ __Searched Powered By {BOT_NAME}__"""
             key = InlineKeyboardMarkup(
                 [
                     [
@@ -287,21 +337,46 @@ async def start_command(_, message):
                 ]
             )
             await m.delete()
-            return await app.send_photo(
+            await app.send_photo(
                 message.chat.id,
                 photo=thumbnail,
                 caption=searched_text,
                 parse_mode="markdown",
                 reply_markup=key,
             )
+            if await is_on_off(5):
+                sender_id = message.from_user.id
+                sender_name = message.from_user.first_name
+                umention = f"[{sender_name}](tg://user?id={int(sender_id)})"
+                return await LOG_CLIENT.send_message(
+                    LOG_GROUP_ID,
+                    f"{message.from_user.mention} has just started bot to check <code>VIDEO INFORMATION</code>\n\n**USER ID:** {sender_id}\n**USER NAME:** {sender_name}",
+                )
+            return
+    out = private_panel()
+    await message.reply_text(
+        home_text_pm,
+        reply_markup=InlineKeyboardMarkup(out[1]),
+    )
+    if await is_on_off(5):
+        sender_id = message.from_user.id
+        sender_name = message.from_user.first_name
+        umention = f"[{sender_name}](tg://user?id={int(sender_id)})"
+        return await LOG_CLIENT.send_message(
+            LOG_GROUP_ID,
+            f"{message.from_user.mention} has just started Bot.\n\n**USER ID:** {sender_id}\n**USER NAME:** {sender_name}",
+        )
+    return
 
 
 async def help_parser(name, keyboard=None):
     if not keyboard:
-        keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "hlp"))
+        keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
     return (
         """Hello {first_name},
+
 Click on the buttons for more information.
+
 All commands can be used with: /
 """.format(
             first_name=name
@@ -316,16 +391,18 @@ async def shikhar(_, CallbackQuery):
     await CallbackQuery.message.edit(text, reply_markup=keyboard)
 
 
-@app.on_callback_query(filters.regex(r"elp_(.*?)"))
+@app.on_callback_query(filters.regex(r"help_(.*?)"))
 async def help_button(client, query):
-    ho_match = re.match(r"help_home\((.+?)\)", query.data)
-    m_match = re.match(r"help_module\((.+?)\)", query.data)
-    pv_match = re.match(r"help_prev\((.+?)\)", query.data)
-    net_match = re.match(r"help_next\((.+?)\)", query.data)
-    bak_match = re.match(r"help_back", query.data)
-    crte_match = re.match(r"help_create", query.data)
-    tp_text = f"""Hello {query.from_user.first_name},
+    home_match = re.match(r"help_home\((.+?)\)", query.data)
+    mod_match = re.match(r"help_module\((.+?)\)", query.data)
+    prev_match = re.match(r"help_prev\((.+?)\)", query.data)
+    next_match = re.match(r"help_next\((.+?)\)", query.data)
+    back_match = re.match(r"help_back", query.data)
+    create_match = re.match(r"help_create", query.data)
+    top_text = f"""Hello {query.from_user.first_name},
+
 Click on the buttons for more information.
+
 All commands can be used with: /
  """
     if mod_match:
