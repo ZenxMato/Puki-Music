@@ -234,9 +234,7 @@ home_text_pm = f"""
 
 **💬 {BOT_NAME} ᴍᴜsɪᴄ ᴍᴇᴍᴜɴɢᴋɪɴᴋᴀɴ ᴀɴᴅᴀ ᴜɴᴛᴜᴋ ᴍᴇᴍᴜᴛᴀʀ ᴍᴜsɪᴋ ᴘᴀᴅᴀ ɢʀᴜᴘ ᴍᴇʟᴀʟᴜɪ ᴏʙʀᴏʟᴀɴ sᴜᴀʀᴀ ʏᴀɴɢ ʙᴀʀᴜ ᴅɪ ᴛᴇʟᴇɢʀᴀᴍ.**
 
-**🔥 Untuk Mengetahui Semua Perintah Bot Dan Bagaimana Cara Kerja Nya Dengan Menekan Tombol » 📚 ᴘᴇʀɪɴᴛᴀʜ ʙᴀɴᴛᴜᴀɴ ᴅɪsɪɴɪ!**
-
-**💫ᴛᴇʀɪᴍᴀᴋᴀsɪʜ sᴜᴅᴀʜ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʙᴏᴛ ᴋᴀᴍɪ** """
+**🔥 Untuk Mengetahui Semua Perintah Bot Dan Bagaimana Cara Kerja Nya Dengan Menekan Tombol » 📚 ᴘᴇʀɪɴᴛᴀʜ ʙᴀɴᴛᴜᴀɴ ᴅɪsɪɴɪ!**"""
 
 @app.on_message(filters.command("help") & filters.private)
 async def help_command(_, message):
