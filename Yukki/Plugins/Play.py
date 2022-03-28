@@ -212,7 +212,7 @@ async def choose_playmode(_, CallbackQuery):
             "This is not for you! Search You Own Song.", show_alert=True
         )
     buttons = choose_markup(videoid, duration, user_id)
-    photo="https://telegra.ph/file/6f991087fdb96965c8022.jpg"
+    photo=thumb,
     picmetext = """
 **🎭 Silakan Pilih Jika Ingin Memutar.**
 **✨ Tersedia Music & Video.**
