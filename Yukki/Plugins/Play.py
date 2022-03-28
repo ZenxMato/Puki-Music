@@ -211,6 +211,9 @@ async def choose_playmode(_, CallbackQuery):
         return await CallbackQuery.answer(
             "This is not for you! Search You Own Song.", show_alert=True
         )
+        buttons = choose_markup(
+            videoid, duration, user_id
+        )
         med = InputMediaPhoto(
             media=thumb,
             caption=f"🏷 **Name:**{title}\n**⏱Duration**: {duration_min} Mins\n\n[Get  Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})",
