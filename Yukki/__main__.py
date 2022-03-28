@@ -232,7 +232,9 @@ async def initiate_bot():
 home_text_pm = f"""
 **✨ sᴇʟᴀᴍᴀᴛ ᴅᴀᴛᴀɴɢ**
 
-**💬 {BOT_NAME} ᴍᴜsɪᴄ ᴍᴇᴍᴜɴɢᴋɪɴᴋᴀɴ ᴀɴᴅᴀ ᴜɴᴛᴜᴋ ᴍᴇᴍᴜᴛᴀʀ ᴍᴜsɪᴋ ᴘᴀᴅᴀ ɢʀᴜᴘ ᴍᴇʟᴀʟᴜɪ ᴏʙʀᴏʟᴀɴ sᴜᴀʀᴀ ʏᴀɴɢ ʙᴀʀᴜ ᴅɪ ᴛᴇʟᴇɢʀᴀᴍ.** 
+**💬 {BOT_NAME} ᴍᴜsɪᴄ ᴍᴇᴍᴜɴɢᴋɪɴᴋᴀɴ ᴀɴᴅᴀ ᴜɴᴛᴜᴋ ᴍᴇᴍᴜᴛᴀʀ ᴍᴜsɪᴋ ᴘᴀᴅᴀ ɢʀᴜᴘ ᴍᴇʟᴀʟᴜɪ ᴏʙʀᴏʟᴀɴ sᴜᴀʀᴀ ʏᴀɴɢ ʙᴀʀᴜ ᴅɪ ᴛᴇʟᴇɢʀᴀᴍ.**
+
+**🔎 Untuk Mengetahui Semua Perintah Bot Dan Bagaimana Cara Kerja Nya Dengan Menekan Tombol » 📚 ᴘᴇʀɪɴᴛᴀʜ ʙᴀɴᴛᴜᴀɴ ᴅɪsɪɴɪ!
 
 **💫ᴛᴇʀɪᴍᴀᴋᴀsɪʜ sᴜᴅᴀʜ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʙᴏᴛ ᴋᴀᴍɪ**.."""
 
