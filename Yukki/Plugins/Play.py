@@ -214,9 +214,8 @@ async def choose_playmode(_, CallbackQuery):
     buttons = choose_markup(videoid, duration, user_id)
     photo="https://telegra.ph/file/5dc0a19059a06978580f7.jpg"
     picmetext = """
-**🏷️ ᴛᴇʀsᴇᴅɪᴀ: ᴍᴜsɪᴄ & ᴠɪᴅᴇᴏ**
-
-**✨sɪʟᴀᴋᴀɴ ᴘɪʟɪʜ ʏᴀɴɢ ɪɴɢɪɴ ᴋᴀʟɪᴀɴ ᴍᴀᴜ✨** 
+**💡 Silakan Kalian Pilih Jika Ingin Memutar.**
+**💫 Tersedia Music & Video Bebas Pilih.**
     """
     return await CallbackQuery.edit_message_media(InputMediaPhoto(media=photo, caption=picmetext),
         reply_markup=InlineKeyboardMarkup(buttons)
