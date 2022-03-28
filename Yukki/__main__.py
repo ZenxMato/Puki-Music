@@ -26,6 +26,13 @@ from Yukki.Inline import private_panel
 from Yukki.Plugins import ALL_MODULES
 from Yukki.Utilities.inline import paginate_modules
 
+
+try:
+    from config import START_IMG_URL
+except:
+    START_IMG_URL = None
+
+
 loop = asyncio.get_event_loop()
 console = Console()
 HELPABLE = {}
