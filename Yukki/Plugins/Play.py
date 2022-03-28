@@ -212,15 +212,12 @@ async def choose_playmode(_, CallbackQuery):
             "This is not for you! Search You Own Song.", show_alert=True
         )
     buttons = choose_markup(videoid, duration, user_id)
-    return await message.reply_photo(
-    photo=thumb,
-    picmetext = """
-**🎭 Silakan Pilih Jika Ingin Memutar.**
-**✨ Tersedia Music & Video.**
-    """
-    return await CallbackQuery.edit_message_media(InputMediaPhoto(media=photo, caption=picmetext),
-        reply_markup=InlineKeyboardMarkup(buttons)
-    )
+    mention = f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
+         return await message.reply_photo(
+             photo=thumb,
+             caption=f"🏷 **Name:**{title}\n**⏱Duration**: {duration_min} Mins\n🎧 **Request by:**{mention}\n\n[Get  Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})",
+             reply_markup=InlineKeyboardMarkup(buttons),
+         )
     await supun.delete()
 
 #        (
