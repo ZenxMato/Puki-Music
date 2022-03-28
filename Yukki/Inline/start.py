@@ -174,10 +174,10 @@ def private_panel():
             ],
             [
                 InlineKeyboardButton(
-                    text="✨ᴄʜᴀɴɴᴇʟ", url=f"{SUPPORT_CHANNEL}"
+                    text="ᴄʜᴀɴɴᴇʟ", url=f"{SUPPORT_CHANNEL}"
                 ),
                 InlineKeyboardButton(
-                    text="💫ɢʀᴏᴜᴘ", url=f"{SUPPORT_GROUP}"
+                    text="ɢʀᴏᴜᴘ", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
