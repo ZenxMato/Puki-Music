@@ -214,10 +214,7 @@ async def choose_playmode(_, CallbackQuery):
     buttons = choose_markup(videoid, duration, user_id)
     photo="https://telegra.ph/file/5dc0a19059a06978580f7.jpg"
     picmetext = """
-🎭 **Do you want to play this as a video?**
-**Or to play as an audio?**
-
-**Select it below**[More Info](https://t.me/szvcbot)
+• sɪʟᴀᴋᴀɴ ᴘɪʟɪʜ ᴠɪᴅᴇᴏ / ᴍᴜsɪᴄ •
     """
     return await CallbackQuery.edit_message_media(InputMediaPhoto(media=photo, caption=picmetext),
         reply_markup=InlineKeyboardMarkup(buttons)
