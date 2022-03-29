@@ -217,9 +217,9 @@ async def choose_playmode(_, CallbackQuery):
 **🎭 Silakan Pilih Jika Ingin Memutar.**
 **✨ Tersedia Music & Video.**
         """
-        return await CallbackQuery.edit_message_media(InputMediaPhoto(photo=photo, caption=caption),
+        return await CallbackQuery.edit_message_media(InputMediaPhoto(media=photo, caption=picmetext),
         reply_markup=InlineKeyboardMarkup(buttons)
-        )
+    )
     await supun.delete()
 
 #        (
