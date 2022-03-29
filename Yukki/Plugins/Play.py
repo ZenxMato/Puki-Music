@@ -209,14 +209,14 @@ async def choose_playmode(_, CallbackQuery):
     videoid, duration, user_id = callback_request.split("|")
     if CallbackQuery.from_user.id != int(user_id):
         return await CallbackQuery.answer(
-            "This is not for you! Search You Own Song.", show_alert=True
+            "**Mau Ngapain? Play sendiri.**", show_alert=True
         )
     buttons = choose_markup(videoid, duration, user_id)
     photo="https://telegra.ph/file/21ce0a69c2c2eb31a45b0.jpg"
     picmetext = """
 **🎭 Silakan Pilih Jika Ingin Memutar.**
 **✨ Tersedia Music & Video.**"""
-        return await CallbackQuery.edit_message_media(InputMediaPhoto(media=photo, caption=caption),
+        return await CallbackQuery.edit_message_media(InputMediaPhoto(media=photo, caption=picmetext),
         reply_markup=InlineKeyboardMarkup(buttons)
         )
     await supun.delete()
