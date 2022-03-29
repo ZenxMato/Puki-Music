@@ -177,7 +177,7 @@ async def play(_, message: Message):
         user_id = message.from_user.id
         
         results = YoutubeSearch(query, max_results=5).to_dict()
-        photo = "https://telegra.ph/file/fcf12724559d691637c68.jpg"
+        photo = "https://telegra.ph/file/e252564b99051e3529ec6.jpg"
         caption=(f"1️⃣ <b>{results[0]['title']}</b>\n └ 💡 [More information](https://t.me/{BOT_USERNAME}?start=info_{results[0]['id']})\n\n2️⃣ <b>{results[1]['title']}</b>\n └ 💡 [More information](https://t.me/{BOT_USERNAME}?start=info_{results[1]['id']})\n\n3️⃣ <b>{results[2]['title']}</b>\n └ 💡 [More information](https://t.me/{BOT_USERNAME}?start=info_{results[3]['id']})\n\n4️⃣ <b>{results[3]['title']}</b>\n └ 💡 [More information](https://t.me/{BOT_USERNAME}?start=info_{results[3]['id']})\n\n5️⃣ <b>{results[4]['title']}</b>\n └ 💡 [More information](https://t.me/{BOT_USERNAME}?start=info_{results[4]['id']})")
         buttons = search_markup(
             results[0]["id"],
