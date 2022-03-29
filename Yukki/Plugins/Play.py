@@ -216,7 +216,7 @@ async def choose_playmode(_, CallbackQuery):
     picmetext = """
 **🎭 Silakan Pilih Jika Ingin Memutar.**
 **✨ Tersedia Music & Video.**
-        """
+    """
          return await CallbackQuery.edit_message_media(InputMediaPhoto(media=photo, caption=picmetext),
         reply_markup=InlineKeyboardMarkup(buttons)
     )
