@@ -215,8 +215,9 @@ async def choose_playmode(_, CallbackQuery):
     photo = "https://telegra.ph/file/e252564b99051e3529ec6.jpg"
     picmetext = """
 **🎭 Silakan Pilih Jika Ingin Memutar.**
-**✨ Tersedia Music & Video.**""" 
-         return await CallbackQuery.edit_message_media(InputMediaPhoto(media=photo, caption=picmetext),
+**✨ Tersedia Music & Video.**
+    """
+    return await CallbackQuery.edit_message_media(InputMediaPhoto(media=photo, caption=picmetext),
         reply_markup=InlineKeyboardMarkup(buttons)
         )
     await supun.delete()
