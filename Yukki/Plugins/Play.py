@@ -177,7 +177,7 @@ async def play(_, message: Message):
         user_id = message.from_user.id
         
         results = YoutubeSearch(query, max_results=5).to_dict()
-        photo = "https://telegra.ph/file/4b61f74ac48d102bb1f1b.jpg"
+        photo = "https://telegra.ph/file/fcf12724559d691637c68.jpg"
         caption=(f"1️⃣ <b>{results[0]['title']}</b>\n └ 💡 [More information](https://t.me/{BOT_USERNAME}?start=info_{results[0]['id']})\n\n2️⃣ <b>{results[1]['title']}</b>\n └ 💡 [More information](https://t.me/{BOT_USERNAME}?start=info_{results[1]['id']})\n\n3️⃣ <b>{results[2]['title']}</b>\n └ 💡 [More information](https://t.me/{BOT_USERNAME}?start=info_{results[3]['id']})\n\n4️⃣ <b>{results[3]['title']}</b>\n └ 💡 [More information](https://t.me/{BOT_USERNAME}?start=info_{results[3]['id']})\n\n5️⃣ <b>{results[4]['title']}</b>\n └ 💡 [More information](https://t.me/{BOT_USERNAME}?start=info_{results[4]['id']})")
         buttons = search_markup(
             results[0]["id"],
@@ -213,11 +213,8 @@ async def choose_playmode(_, CallbackQuery):
         )
     buttons = choose_markup(videoid, duration, user_id)
     photo="https://telegra.ph/file/21ce0a69c2c2eb31a45b0.jpg"
-    picmetext = """
-**🎭 Silakan Pilih Jika Ingin Memutar.**
-**✨ Tersedia Music & Video.**
-    """
-    return await CallbackQuery.edit_message_media(InputMediaPhoto(media=photo, caption=picmetext),
+    caption=f"🏷 **Name:**{title}\n**⏱Duration**: {duration_min}"
+    return await CallbackQuery.edit_message_media(InputMediaPhoto(media=photo, caption=caption),
         reply_markup=InlineKeyboardMarkup(buttons)
         )
     await supun.delete()
