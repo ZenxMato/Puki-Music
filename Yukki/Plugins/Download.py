@@ -100,7 +100,7 @@ async def boom(_, CallbackQuery):
     user_id = CallbackQuery.from_user.id
     type, format_id, videoid = callback_request.split("||")
     mystic = await CallbackQuery.edit_message_text(
-        "`📡 Download Started`",
+        "**📡 Download Started, Please Wait..**",
         reply_markup=inl,
     )
     yturl = f"https://www.youtube.com/watch?v={videoid}"
@@ -112,10 +112,10 @@ async def boom(_, CallbackQuery):
         thumb_image_path = result["thumbnails"][0]["url"]
         channel = channel = result["channel"]["name"]
         fetched = f"""
-`📡 Track Download`
+**📡 Track Download**
 
-🏷️`Name Song: {title}`
-⏱ `Duration: {duration} Mins`
+`Nama: {title}`
+`Durasi: {duration}`
 """
     filext = "%(title)s.%(ext)s"
     userdir = os.path.join(os.getcwd(), "downloads", str(user_id))
@@ -222,7 +222,7 @@ async def boom(_, CallbackQuery):
 
 def p_mark(link, channel):
     buttons = [
-        [InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data=f"forceclose")],
+        [InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data=f"close")],
     ]
     return buttons
 
@@ -231,7 +231,7 @@ async def send_file(
     CallbackQuery, med, filename, videoid, user_id, link, channel
 ):
     await CallbackQuery.edit_message_text(
-        "`📡 Upload Started`",
+        "**📡 Upload Started, Please Wait...**",
         reply_markup=upl,
     )
     try:
