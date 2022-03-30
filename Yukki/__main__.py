@@ -10,7 +10,7 @@ from rich.console import Console
 from rich.table import Table
 from youtubesearchpython import VideosSearch
 
-from config import (LOG_GROUP_ID, LOG_SESSION, STRING1, STRING2, STRING3,
+from config import (BOT_USERNAME, LOG_GROUP_ID, LOG_SESSION, STRING1, STRING2, STRING3,
                     STRING4, STRING5)
 from Yukki import (ASS_CLI_1, ASS_CLI_2, ASS_CLI_3, ASS_CLI_4, ASS_CLI_5,
                    ASSID1, ASSID2, ASSID3, ASSID4, ASSID5, ASSNAME1, ASSNAME2,
@@ -229,18 +229,14 @@ async def initiate_bot():
     console.print(f"\n[red]Stopping Bot")
 
 
-home_text_pm = f"""**✨ Selamat Datang di {BOT_NAME}
+home_text_pm = f"""**✨ Selamat Datang di {BOT_NAME}[{BOT_USERNAME}]
 
 💬 {BOT_NAME} memungkinkan anda untuk memutar musik pada grup melalui obrolan suara yang baru di Telegram!
 
 💡 Tambahkan Saya Kedalam Groups Kamu!
 
 🔮 Semua Perintah Silakan Pencet**: /help 
-""".format(
-            first_name=name
-        ),
-        keyboard,
-    )
+"""
 
 
 @app.on_message(filters.command("help") & filters.private)
@@ -408,12 +404,7 @@ async def help_button(client, query):
     create_match = re.match(r"help_create", query.data)
     top_text = f"""**💻 Kamu Membutuhkan Bantuan {first_name}? Silakan Tap Di Bawah!*  .
 
-**🔥 Jangan Lupa Untuk Menambahkan Saya Kedalam Group!**
-""".format(
-            first_name=name
-        ),
-        keyboard,
-    )
+**🔥 Jangan Lupa Untuk Menambahkan Saya Kedalam Group!**"""
 
     if mod_match:
         module = mod_match.group(1)
