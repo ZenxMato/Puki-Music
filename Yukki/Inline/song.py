@@ -42,7 +42,7 @@ def song_download_markup(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="ᴋᴇᴍʙᴀʟɪ", callback_data=f"goback {videoid}|{user_id}"
+                text="🙋 ᴋᴇᴍʙᴀʟɪ", callback_data=f"good {videoid}|{user_id}"
             ),
         ],
     ]
