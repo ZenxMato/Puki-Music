@@ -367,7 +367,7 @@ async def start_command(_, message):
         umention = f"[{sender_name}](tg://user?id={int(sender_id)})"
         return await LOG_CLIENT.send_message(
             LOG_GROUP_ID,
-            f"{message.from_user.mention} has just started Bot.\n\n**USER ID:** {sender_id}\n**USER NAME:** {sender_name}",
+            f"**{message.from_user.mention} Mencoba Menggunakan Bot**.\n\n**🆔 USER ID:** `{sender_id}`\n**🧐 NAME:** `{sender_name}`",
         )
     return
 
@@ -398,7 +398,7 @@ async def help_button(client, query):
     next_match = re.match(r"help_next\((.+?)\)", query.data)
     back_match = re.match(r"help_back", query.data)
     create_match = re.match(r"help_create", query.data)
-    top_text = f"""** 👉 Silakan Tap Tombol Di Bawah! 👈 **
+    top_text = f"""** 💡 Ini Adalah Menu Bantuan {BOT_NAME} **
 """
     if mod_match:
         module = mod_match.group(1)
