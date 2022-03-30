@@ -53,11 +53,11 @@ async def start_stream_video(message, file, title, mystic):
             photo="Utils/Telegram.JPEG",
             caption=(
                 f"""
-💡 **Track added to queue**» {position}
+💡 **Track added to queue** » {position}
 
 🏷 **Name:** [Given Video Via Telegram]({link})
 ⏱ **Duration:** `{duration}`
-🎧** Request by:**{user}
+🎧** Request by:** `{user}`
 """
             ),
             reply_markup=audio_markup2,
@@ -85,7 +85,7 @@ async def start_stream_video(message, file, title, mystic):
 🏷 **Name:** [Given Video Via Telegram]({link})
 ⏱ **Duration:** `{duration}`
 💡 **Status:** `Playing Video`
-🎧** Request by:**{user}
+🎧** Request by:** `{user}`
 """
         final_output = await message.reply_photo(
             photo="Utils/Telegram.JPEG",
@@ -134,7 +134,7 @@ async def start_live_stream(
 
 🏷 **Name:** [{title[:25]}](https://www.youtube.com/watch?v={videoid}) 
 💡 **Status:** `Playing Video`
-🎧** Request by:**{CallbackQuery.from_user.mention}
+🎧** Request by:** `{CallbackQuery.from_user.mention}`
 
 📖 **Info**: [Get Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})
 """
@@ -192,11 +192,11 @@ async def start_video_stream(
             photo=thumb,
             caption=(
                 f"""
-💡 **Track added to queue**» {position}
+💡 **Track added to queue** » {position}
 
 🏷 **Name:** [{title[:25]}](https://www.youtube.com/watch?v={videoid}) 
 ⏱ **Duration:** `{duration}`
-🎧** Request by:**{user}
+🎧** Request by:** `{user}`
 
 📖 **Info**: [Get Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})"""
             ),
@@ -230,7 +230,7 @@ async def start_video_stream(
 🏷 **Name:** [{title[:25]}](https://www.youtube.com/watch?v={videoid}) 
 ⏱ **Duration:** `{duration}`
 💡 **Status:** `Playing Video`
-🎧** Request by:**{user}
+🎧** Request by:** `{user}`
 
 📖 **Info**: [Get Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})
 """
