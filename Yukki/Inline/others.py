@@ -43,7 +43,7 @@ def download_markup(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="ᴄʟᴏsᴇ", callback_data=f"forceclose {videoid}|{user_id}"
+                text="⬅️ Go Back", callback_data=f"goback {videoid}|{user_id}"
             )
         ],
     ]
