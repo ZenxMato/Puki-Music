@@ -9,7 +9,7 @@
 
 from config import LOG, LOG_GROUP_ID
 from YukkiMusic import app
-from YukkiMusic.utils.database import is_on_off
+from Yukki.Database import is_on_off
 
 
 async def play_logs(message, streamtype):
