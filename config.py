@@ -19,7 +19,8 @@ LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", ""))
 MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
-START_IMG_URL = getenv("START_IMG_URL")
+START_IMG_URL = getenv("START_IMG_URL, None")
+LOG = 2
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO", "https://github.com/NotReallyShikhar/YukkiMusicBot"
