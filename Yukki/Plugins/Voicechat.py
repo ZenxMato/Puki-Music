@@ -144,7 +144,7 @@ async def activevc(_, message: Message):
         if (await app.get_chat(x)).username:
             user = (await app.get_chat(x)).username
             text += (
-                f"<b>{j + 1}.</b>  **Nama: [{title}](https://t.me/{user})**"
+                f"<b>{j + 1}.</b>  **Nama: [{title}](https://t.me/{user})**\n\n"
             )
         else:
             text += f"<b>{j + 1}.</b> **Nama: {title}**"
