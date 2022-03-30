@@ -40,10 +40,5 @@ def song_download_markup(videoid, user_id):
                 callback_data=f"gets video|{videoid}|{user_id}",
             ),
         ],
-        [
-            InlineKeyboardButton(
-                text="🙋 ᴋᴇᴍʙᴀʟɪ", callback_data=f"good {videoid}|{user_id}"
-            ),
-        ],
     ]
     return buttons
