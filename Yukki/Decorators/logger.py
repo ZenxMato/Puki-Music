@@ -7,10 +7,9 @@
 #
 # All rights reserved.
 
-from config import LOG, LOG_GROUP_ID
-from Yukki import app
+from config import LOG_GROUP_ID
+from Yukki.Core.Clients.cli import LOG_CLIENT
 from Yukki.Database import is_on_off
-
 
 async def play_logs(message, streamtype):
     if await is_on_off(LOG):
