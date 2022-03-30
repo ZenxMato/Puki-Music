@@ -235,7 +235,7 @@ home_text_pm = f"""**✨ Selamat Datang di {BOT_NAME}
 
 💡 Tambahkan Saya Kedalam Groups Kamu!
 
-🔮 Semua Perintah Silakan Pencet**: /help 
+🔮 Semua Perintah Silakan Pencet**: `/help` 
 """
 
 
