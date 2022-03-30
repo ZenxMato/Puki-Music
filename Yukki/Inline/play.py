@@ -67,12 +67,6 @@ def url_markup2(videoid, duration, user_id):
                 callback_data=f"Choose {videoid}|{duration}|{user_id}",
             ),
         ],
-        [
-            InlineKeyboardButton(
-                text="🔙 ᴋᴇᴍʙᴀʟɪ",
-                callback_data=f"goback {videoid}|{duration}|{user_id}",
-            )
-        ],
     ]
     return buttons
 
@@ -234,7 +228,10 @@ def timer_markup(videoid, user_id, current_time, total_time):
             InlineKeyboardButton(
                 text="ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"
             ),
-            InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data=f"close"),
+            InlineKeyboardButton(
+                text="ᴅᴏᴡɴʟᴏᴀᴅ",
+                callback_data=f"qwertyuiopasdfghjkl {videoid}|{user_id}",
+            ),
         ],
     ]
     return buttons
@@ -249,7 +246,10 @@ def audio_markup(videoid, user_id, current_time, total_time):
             InlineKeyboardButton(
                 text="ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"
             ),
-            InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data=f"close"),
+            InlineKeyboardButton(
+                text="ᴅᴏᴡɴʟᴏᴀᴅ",
+                callback_data=f"qwertyuiopasdfghjkl {videoid}|{user_id}",
+            ),
         ],
     ]
     return buttons
@@ -261,7 +261,10 @@ def audio_timer_markup_start(videoid, user_id, current_time, total_time):
             InlineKeyboardButton(
                 text="ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"
             ),
-            InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data=f"close"),
+            InlineKeyboardButton(
+                text="ᴅᴏᴡɴʟᴏᴀᴅ",
+                callback_data=f"qwertyuiopasdfghjkl {videoid}|{user_id}",
+            ),
         ],
     ]
     return buttons
