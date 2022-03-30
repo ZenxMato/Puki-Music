@@ -89,7 +89,7 @@ async def qwertyuiopasdfghjkl(_, CallbackQuery):
     callback_request = callback_data.split(None, 1)[1]
     userid = CallbackQuery.from_user.id
     videoid, user_id = callback_request.split("|")
-    buttons = song_download_markup(videoid, user_id)
+    buttons = url_markup2(videoid, duration, user_id)
     await CallbackQuery.edit_message_reply_markup(
         reply_markup=InlineKeyboardMarkup(buttons)
     )
