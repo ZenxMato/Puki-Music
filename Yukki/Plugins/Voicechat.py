@@ -183,10 +183,10 @@ async def activevi_(_, message: Message):
             text += f"<b>{j + 1}. {title}</b> [`{x}`]\n"
         j += 1
     if not text:
-        await message.reply_text("No Active Voice Chats")
+        await message.reply_text("`❌ Obrolan Suara Kosong`")
     else:
         await message.reply_text(
-            f"**List Voice Chat: {**\n\n{text}",
+            f"**☑️ Menemukan Obrolan Suara:** {\n\n{text}",
             disable_web_page_preview=True,
         )
 
