@@ -161,6 +161,9 @@ def private_panel():
                     "❔ ᴛᴀᴍʙᴀʜᴋᴀɴ sᴀʏᴀ ᴋᴇ ɢʀᴜᴘ", 
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
                 ),
+                InlineKeyboardButton (
+                    "☕ ᴅᴏɴᴀsɪ ᴋᴀᴋᴀ", url=f"https://t.me/zenzuzu"
+                ),
             ],
             [
                 InlineKeyboardButton(
@@ -168,13 +171,6 @@ def private_panel():
                 ),
                 InlineKeyboardButton(
                     text="✨ ɢʀᴏᴜᴘ", url=f"{SUPPORT_GROUP}"
-                ),
-                InlineKeyboardButton(
-                    "💻 ʙᴀɴᴛᴜᴀɴ", callback_data="shikrar"
-                ),
-                InlineKeyboardButton (
-                    "☕ ᴅᴏɴᴀsɪ ᴋᴀᴋᴀ",
-                    url="https://t.me/zenzuzu"
                 ),
             ],
         ]
