@@ -74,7 +74,7 @@ def paginate_modules(page_n, module_dict, prefix, chat=None):
                 ),
                 EqInlineKeyboardButton(
                     "❌",
-                    callback_data="forceclose {videoid}|{user_id}",
+                    callback_data="close",
                 ),
                 EqInlineKeyboardButton(
                     "➡️",
