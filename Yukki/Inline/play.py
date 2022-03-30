@@ -189,6 +189,7 @@ def secondary_markup(videoid, user_id):
             InlineKeyboardButton(
                 text="ᴅᴏᴡɴʟᴏᴀᴅ",
                 callback_data=f"qwertyuiopasdfghjkl {videoid}|{user_id}",
+            ),
         ],
     ]
     return buttons
@@ -203,6 +204,7 @@ def secondary_markup2(videoid, user_id):
             InlineKeyboardButton(
                 text="ᴅᴏᴡɴʟᴏᴀᴅ",
                 callback_data=f"qwertyuiopasdfghjkl {videoid}|{user_id}",
+            ),
         ],
     ]
     return buttons
@@ -220,6 +222,7 @@ def primary_markup(videoid, user_id, current_time, total_time):
             InlineKeyboardButton(
                 text="ᴅᴏᴡɴʟᴏᴀᴅ",
                 callback_data=f"qwertyuiopasdfghjkl {videoid}|{user_id}",
+            ),
         ],
     ]
     return buttons
