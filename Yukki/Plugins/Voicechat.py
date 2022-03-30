@@ -177,7 +177,7 @@ async def activevi_(_, message: Message):
         if (await app.get_chat(x)).username:
             user = (await app.get_chat(x)).username
             text += (
-                f"<b>{j + 1}.</b>  [{title}](https://t.me/{user})[`{x}`]\n"
+                f"<b>{j + 1}.</b>  **Nama: [{title}**](https://t.me/{user})"
             )
         else:
             text += f"<b>{j + 1}. {title}</b> [`{x}`]\n"
@@ -186,7 +186,7 @@ async def activevi_(_, message: Message):
         await message.reply_text("No Active Voice Chats")
     else:
         await message.reply_text(
-            f"**Active Video Calls:-**\n\n{text}",
+            f"**List Voice Chat: {**\n\n{text}",
             disable_web_page_preview=True,
         )
 
