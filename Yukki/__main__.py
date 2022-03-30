@@ -229,14 +229,13 @@ async def initiate_bot():
     console.print(f"\n[red]Stopping Bot")
 
 
-home_text_pm = f"""**✨ Selamat Datang ,
+home_text_pm = f"""**✨ Selamat Datang {message.from_user.mention}
 
 💬 {BOT_NAME} memungkinkan anda untuk memutar musik pada grup melalui obrolan suara yang baru di Telegram!
 
-💡 Untuk Mengetahui Semua Perintah Bot Dan Bagaimana Cara Kerja Nya Dengan Menekan Tombol » 💻 ᴄᴏᴍᴍᴀɴᴅ​!
+💡 Jangan ragu untuk menambahkan saya ke group!
 
-
-🔮 Semua Perintah Menggunakan**: / """
+🔮 Semua Perintah Silakan Pencet**: /help """
 
 
 @app.on_message(filters.command("help") & filters.private)
