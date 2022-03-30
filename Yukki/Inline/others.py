@@ -17,16 +17,6 @@ def others_markup(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="🎧 ɢᴇᴛ ᴀᴜᴅɪᴏ",
-                callback_data=f"gets audio|{videoid}|{user_id}",
-            ),
-            InlineKeyboardButton(
-                text="🎬 ɢᴇᴛ ᴠɪᴅᴇᴏ",
-                callback_data=f"gets video|{videoid}|{user_id}",
-            ),
-        ],
-        [
-            InlineKeyboardButton(
                 text="ᴄʟᴏsᴇ",
                 callback_data=f"forceclose {videoid}|{user_id}",
             )
