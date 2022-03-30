@@ -14,7 +14,7 @@ def others_markup(videoid, user_id):
             InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
             InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
             InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
-        ),
+            ),
             InlineKeyboardButton(
                 text="ᴋᴇᴍʙᴀʟɪ",
                 callback_data=f"goback {videoid}|{user_id}",
