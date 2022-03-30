@@ -233,9 +233,14 @@ home_text_pm = f"""**✨ Selamat Datang di {BOT_NAME}
 
 💬 {BOT_NAME} memungkinkan anda untuk memutar musik pada grup melalui obrolan suara yang baru di Telegram!
 
-💡 Jangan ragu untuk menambahkan saya ke group!
+💡 Tambahkan Saya Kedalam Groups Kamu!
 
-🔮 Semua Perintah Silakan Pencet**: /help """
+🔮 Semua Perintah Silakan Pencet**: /help 
+""".format(
+            first_name=name
+        ),
+        keyboard,
+    )
 
 
 @app.on_message(filters.command("help") & filters.private)
@@ -401,12 +406,15 @@ async def help_button(client, query):
     next_match = re.match(r"help_next\((.+?)\)", query.data)
     back_match = re.match(r"help_back", query.data)
     create_match = re.match(r"help_create", query.data)
-    top_text = f"""Hello {query.from_user.first_name},
+    top_text = f"""**💻 Kamu Membutuhkan Bantuan {first_name}? Silakan Tap Di Bawah!*  .
 
-Click on the buttons for more information.
+**🔥 Jangan Lupa Untuk Menambahkan Saya Kedalam Group!**
+""".format(
+            first_name=name
+        ),
+        keyboard,
+    )
 
-All commands can be used with: /
- """
     if mod_match:
         module = mod_match.group(1)
         text = (
