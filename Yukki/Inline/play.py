@@ -8,6 +8,10 @@ def url_markup(videoid, duration, user_id, query, query_type):
     buttons = [
         [
             InlineKeyboardButton(
+                text="📤ᴅᴏᴡɴʟᴏᴀᴅ",
+                callback_data=f"qwertyuiopasdfghjkl {videoid}|{user_id}",
+            ),
+            InlineKeyboardButton(
                 text="🎵ᴘʟᴀʏ ᴍᴜsɪᴄ",
                 callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
             ),
