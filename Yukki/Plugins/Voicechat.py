@@ -144,16 +144,16 @@ async def activevc(_, message: Message):
         if (await app.get_chat(x)).username:
             user = (await app.get_chat(x)).username
             text += (
-                f"<b>{j + 1}.</b>  [{title}](https://t.me/{user})[`{x}`]\n"
+                f"<b>{j + 1}.</b>  **Nama: [{title}](https://t.me/{user})**"
             )
         else:
-            text += f"<b>{j + 1}. {title}</b> [`{x}`]\n"
+            text += f"<b>{j + 1}.</b> **Nama: {title}**"
         j += 1
     if not text:
-        await message.reply_text("No Active Voice Chats")
+        await message.reply_text("**❌ Obrolan Suara Kosong**")
     else:
         await message.reply_text(
-            f"**Active Voice Chats:-**\n\n{text}",
+            f"**☑️ Menemukan Obrolan Video:**\n\n{text}",
             disable_web_page_preview=True,
         )
 
@@ -177,16 +177,16 @@ async def activevi_(_, message: Message):
         if (await app.get_chat(x)).username:
             user = (await app.get_chat(x)).username
             text += (
-                f"<b>{j + 1}.</b>  **Nama: [{title}**](https://t.me/{user})"
+                f"<b>{j + 1}.</b>  **Nama: [{title}](https://t.me/{user})**"
             )
         else:
-            text += f"<b>{j + 1}. {title}</b> [`{x}`]\n"
+            text += f"<b>{j + 1}.</b>  **Nama: {title}**"
         j += 1
     if not text:
-        await message.reply_text("`❌ Obrolan Suara Kosong`")
+        await message.reply_text("`❌ Obrolan Video Kosong`")
     else:
         await message.reply_text(
-            f"**☑️ Menemukan Obrolan Suara:** {\n\n{text}",
+            f"**☑️ Menemukan Obrolan Video:** {\n\n{text}",
             disable_web_page_preview=True,
         )
 
