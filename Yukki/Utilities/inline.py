@@ -73,8 +73,8 @@ def paginate_modules(page_n, module_dict, prefix, chat=None):
                     callback_data="{}_prev({})".format(prefix, modulo_page),
                 ),
                 EqInlineKeyboardButton(
-                    "🔃",
-                    callback_data="help_back",
+                    "ᴍᴇɴᴜ",
+                    callback_data="shikhar",
                 ),
                 EqInlineKeyboardButton(
                     "➡️",
