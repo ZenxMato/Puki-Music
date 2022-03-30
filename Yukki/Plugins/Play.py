@@ -211,7 +211,7 @@ async def choose_playmode(_, CallbackQuery):
         return await CallbackQuery.answer(
             "**Mau Ngapain? Play sendiri.**", show_alert=True
         )
-    buttons = url_markup2(videoid, user_id)
+    buttons = url_markup2(videoid, duration, user_id)
     photo = "https://telegra.ph/file/21ce0a69c2c2eb31a45b0.jpg"
     picmetext = """
 **🎭 Silakan Pilih Jika Ingin Memutar.**
