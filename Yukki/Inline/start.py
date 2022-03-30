@@ -164,6 +164,7 @@ def private_panel():
                 InlineKeyboardButton (
                     "☕ ᴅᴏɴᴀsɪ ᴋᴀᴋᴀ",
                     url="https://t.me/zenzuzu"
+                ),
             ],
             [
                 InlineKeyboardButton(
