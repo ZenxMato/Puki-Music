@@ -400,8 +400,7 @@ async def help_button(client, query):
     next_match = re.match(r"help_next\((.+?)\)", query.data)
     back_match = re.match(r"help_back", query.data)
     create_match = re.match(r"help_create", query.data)
-    top_text = f""" 
-**👋Kamu Membutuhkan Bantuan {query.from_user.first_name} ? Silakan Tap Di Bawah!
+    top_text = f""" 👋Kamu Membutuhkan Bantuan {query.from_user.first_name},
 
 **🔥 Jangan Lupa Untuk Menambahkan Saya Kedalam Group!**
 """
