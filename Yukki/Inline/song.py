@@ -10,7 +10,7 @@ def song_markup(videoid, duration, user_id, query, query_type):
                 callback_data=f"song_right B|{query_type}|{query}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="Download",
+                text="ᴅᴏᴡɴʟᴏᴀᴅ",
                 callback_data=f"qwertyuiopasdfghjkl {videoid}|{user_id}",
             ),
             InlineKeyboardButton(
@@ -42,9 +42,8 @@ def song_download_markup(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="ᴄʟᴏsᴇ",
-                callback_data=f"forceclose {videoid}|{user_id}",
-            )
+                text="⬅️ Go Back", callback_data=f"goback {videoid}|{user_id}"
+            ),
         ],
     ]
     return buttons
