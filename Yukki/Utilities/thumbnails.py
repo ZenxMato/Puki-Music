@@ -37,10 +37,10 @@ async def gen_thumb(thumbnail, title, userid, theme, ctitle):
     draw.text(
         (20, 45),
         f"Playing: {ctitle[:20]}",
-        fill="blue",
+        fill="white",
         stroke_width=2,
-        stroke_fill="black",
-        font=font2,
+        stroke_fill="white",
+        font=font,
     )
     draw.text(
         (25, 595),
