@@ -186,7 +186,7 @@ async def activevi_(_, message: Message):
         await message.reply_text("`❌ Obrolan Video Kosong`")
     else:
         await message.reply_text(
-            f"**☑️ Menemukan Obrolan Video:** {\n\n{text}",
+            f"**☑️ Menemukan Obrolan Video:**\n\n{text}",
             disable_web_page_preview=True,
         )
 
