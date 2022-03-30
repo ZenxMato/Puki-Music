@@ -44,11 +44,11 @@ async def gen_thumb(thumbnail, title, userid, theme, ctitle):
     )
     draw.text(
         (25, 595),
-        f"{title[:17]}...",
-        fill="blue",
-        stroke_width=2,
-        stroke_fill="white",
-        font=font2,
+        f"{title[:25]}...",
+        fill="white",
+        stroke_width=1,
+        stroke_fill="black",
+        font=font,
     )
     img.save(f"cache/final{userid}.png")
     os.remove(f"cache/temp{userid}.png")
