@@ -402,7 +402,7 @@ async def help_button(client, query):
     create_match = re.match(r"help_create", query.data)
     top_text = f""" 👋Kamu Membutuhkan Bantuan {query.from_user.first_name},
 
-**🔥 Jangan Lupa Untuk Menambahkan Saya Kedalam Group!**
+🔥 Jangan Lupa Untuk Menambahkan Saya Kedalam Group!
 """
     if mod_match:
         module = mod_match.group(1)
