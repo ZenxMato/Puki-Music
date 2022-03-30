@@ -100,7 +100,7 @@ async def boom(_, CallbackQuery):
     user_id = CallbackQuery.from_user.id
     type, format_id, videoid = callback_request.split("||")
     mystic = await CallbackQuery.edit_message_text(
-        "Download Started\n\nDownloading speed could be slow.",
+        "**📥 Download Started**\n\n`♻️ Downloading speed could be slow`.",
         reply_markup=inl,
     )
     yturl = f"https://www.youtube.com/watch?v={videoid}"
@@ -112,13 +112,11 @@ async def boom(_, CallbackQuery):
         thumb_image_path = result["thumbnails"][0]["url"]
         channel = channel = result["channel"]["name"]
         fetched = f"""
-**Track Downloaded**
-**Title:** {title}
-✘**Duration:** {duration} Mins
-✘**Views:** `{views}`
-✘**Channel Name:** {channel}
-✘**Video Link:** [Link]({yturl})
- __Youtube Inline Download Powered By {MUSIC_BOT_NAME}__"""
+**📡 Downloaded**
+
+🏷️`Name Song: {title}`
+⏱ `Duration: {duration} Mins`
+"""
     filext = "%(title)s.%(ext)s"
     userdir = os.path.join(os.getcwd(), "downloads", str(user_id))
     if not os.path.isdir(userdir):
@@ -224,7 +222,7 @@ async def boom(_, CallbackQuery):
 
 def p_mark(link, channel):
     buttons = [
-        [InlineKeyboardButton(text="Watch on Youtube", url=f"{link}")],
+        [InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data=f"{close}")],
     ]
     return buttons
 
@@ -233,7 +231,7 @@ async def send_file(
     CallbackQuery, med, filename, videoid, user_id, link, channel
 ):
     await CallbackQuery.edit_message_text(
-        "Upload Started\n\nUploading speed could be slow. Please hold on..",
+        "`📤 Upload Started`\n\n`♻️ Uploading speed could be slow. Please hold on..`",
         reply_markup=upl,
     )
     try:
