@@ -158,19 +158,19 @@ def private_panel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    "❔ ᴛᴀᴍʙᴀʜᴋᴀɴ sᴀʏᴀ ᴋᴇ ɢʀᴜᴘ", 
+                    "❔ ᴛᴀᴍʙᴀʜᴋᴀɴ sᴀʏᴀ", 
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
                 ),
                 InlineKeyboardButton (
-                    "☕ ᴅᴏɴᴀsɪ ᴋᴀᴋᴀ", url=f"https://t.me/zenzuzu"
+                    "☕ ᴅᴏɴᴀsɪ", url=f"https://t.me/zenzuzu"
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="✨ ᴄʜᴀɴɴᴇʟ", url=f"{SUPPORT_CHANNEL}"
+                    text="✨ᴄʜᴀɴɴᴇʟ", url=f"{SUPPORT_CHANNEL}"
                 ),
                 InlineKeyboardButton(
-                    text="✨ ɢʀᴏᴜᴘ", url=f"{SUPPORT_GROUP}"
+                    text="✨ɢʀᴏᴜᴘ", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
