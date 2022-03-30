@@ -20,7 +20,6 @@ def others_markup(videoid, user_id):
                 text="ᴅᴏᴡɴʟᴏᴀᴅ",
                 callback_data=f"qwertyuiopasdfghjkl {videoid}|{user_id}",
             ),
-        ],
             InlineKeyboardButton(
                 text="ᴄʟᴏsᴇ",
                 callback_data=f"forceclose {videoid}|{user_id}",
