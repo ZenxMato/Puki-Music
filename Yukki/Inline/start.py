@@ -83,15 +83,18 @@ def start_pannel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="📚 ᴍᴇɴᴜ ʙᴀɴᴛᴜᴀɴ", callback_data="shikhar"
+                    text="📚 ʙᴀɴᴛᴜᴀɴ", callback_data="shikhar"
+                ),
+                InlineKeyboardButton (
+                    "☕ ᴅᴏɴᴀsɪ", url=f"https://t.me/zenzuzu"
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="ᴄʜᴀɴɴᴇʟ", url=f"{SUPPORT_CHANNEL}"
+                    text="✨ᴄʜᴀɴɴᴇʟ", url=f"{SUPPORT_CHANNEL}"
                 ),
                 InlineKeyboardButton(
-                    text="ɢʀᴏᴜᴘ", url=f"{SUPPORT_GROUP}"
+                    text="✨ɢʀᴏᴜᴘ", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
