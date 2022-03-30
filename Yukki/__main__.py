@@ -376,11 +376,9 @@ async def help_parser(name, keyboard=None):
     if not keyboard:
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
     return (
-        """Hello {first_name},
+        """**💻 Kamu Membutuhkan Bantuan {first_name}? Silakan Tap Di Bawah!
 
-Click on the buttons for more information.
-
-All commands can be used with: /
+**🔥 Jangan Lupa Untuk Menambahkan Saya Kedalam Group!**"""
 """.format(
             first_name=name
         ),
@@ -402,7 +400,7 @@ async def help_button(client, query):
     next_match = re.match(r"help_next\((.+?)\)", query.data)
     back_match = re.match(r"help_back", query.data)
     create_match = re.match(r"help_create", query.data)
-    top_text = f"""**💻 Kamu Membutuhkan Bantuan {first_name}? Silakan Tap Di Bawah!*  .
+    top_text = f"""**💻 Kamu Membutuhkan Bantuan {query.from_user.first_name}? Silakan Tap Di Bawah!
 
 **🔥 Jangan Lupa Untuk Menambahkan Saya Kedalam Group!**"""
 
