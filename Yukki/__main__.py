@@ -26,13 +26,6 @@ from Yukki.Inline import private_panel
 from Yukki.Plugins import ALL_MODULES
 from Yukki.Utilities.inline import paginate_modules
 
-
-try:
-    from config import START_IMG_URL
-except:
-    START_IMG_URL = None
-
-
 loop = asyncio.get_event_loop()
 console = Console()
 HELPABLE = {}
@@ -236,12 +229,15 @@ async def initiate_bot():
     console.print(f"\n[red]Stopping Bot")
 
 
-home_text_pm = f"""
-**✨ sᴇʟᴀᴍᴀᴛ ᴅᴀᴛᴀɴɢ**
+home_text_pm = f"""**✨ Selamat Datang ,
 
-**💬 {BOT_NAME} ᴍᴇᴍᴜɴɢᴋɪɴᴋᴀɴ ᴀɴᴅᴀ ᴜɴᴛᴜᴋ ᴍᴇᴍᴜᴛᴀʀ ᴍᴜsɪᴋ ᴘᴀᴅᴀ ɢʀᴜᴘ ᴍᴇʟᴀʟᴜɪ ᴏʙʀᴏʟᴀɴ sᴜᴀʀᴀ ʏᴀɴɢ ʙᴀʀᴜ ᴅɪ ᴛᴇʟᴇɢʀᴀᴍ.**
+💬 {BOT_NAME} memungkinkan anda untuk memutar musik pada grup melalui obrolan suara yang baru di Telegram!
 
-**🔥 Untuk Mengetahui Semua Perintah Bot Dan Bagaimana Cara Kerja Nya Dengan Menekan Tombol » 📚 ᴘᴇʀɪɴᴛᴀʜ ʙᴀɴᴛᴜᴀɴ ᴅɪsɪɴɪ!**"""
+💡 Untuk Mengetahui Semua Perintah Bot Dan Bagaimana Cara Kerja Nya Dengan Menekan Tombol » 💻 ᴄᴏᴍᴍᴀɴᴅ​!
+
+
+🔮 Semua Perintah Menggunakan**: / """
+
 
 @app.on_message(filters.command("help") & filters.private)
 async def help_command(_, message):
