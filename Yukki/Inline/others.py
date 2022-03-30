@@ -11,17 +11,11 @@ def others_markup(videoid, user_id):
     db_mem[videoid]["check"] = 1
     buttons = [
         [
-            InlineKeyboardButton(text="▶️", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="🔂", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
-        ],
-        [
             InlineKeyboardButton(
-                    text="✨ ᴄʜᴀɴɴᴇʟ", url=f"{SUPPORT_CHANNEL}"
+                    text="ᴄʜᴀɴɴᴇʟ", url=f"{SUPPORT_CHANNEL}"
                 ),
                 InlineKeyboardButton(
-                    text="✨ ɢʀᴏᴜᴘ", url=f"{SUPPORT_GROUP}"
+                    text="ɢʀᴏᴜᴘ", url=f"{SUPPORT_GROUP}"
                 ),
         ],
     ]
@@ -42,7 +36,7 @@ def download_markup(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="⬅️ Go Back", callback_data=f"goback {videoid}|{user_id}"
+                text="ᴍᴇɴᴜ", callback_data=f"goback {videoid}|{user_id}"
             )
         ],
     ]
