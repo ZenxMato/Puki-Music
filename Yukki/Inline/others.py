@@ -15,7 +15,7 @@ def others_markup(videoid, user_id):
                     text="ᴄʜᴀɴɴᴇʟ", url=f"{SUPPORT_CHANNEL}"
                 ),
                 InlineKeyboardButton(
-                    text="ɢʀᴏᴜᴘ", url=f"{SUPPORT_GROUP}"
+                    text="ᴛᴜᴛᴜᴘ", callback_data=f"close"
                 ),
         ],
     ]
