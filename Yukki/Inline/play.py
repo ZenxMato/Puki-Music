@@ -67,10 +67,6 @@ def url_markup2(videoid, duration, user_id):
             InlineKeyboardButton(
                 text="📤ᴅᴏᴡɴʟᴏᴀᴅ",
                 callback_data=f"qwertyuiopasdfghjkl {videoid}|{user_id}",
-            ),
-            InlineKeyboardButton(
-                text="ᴅᴏᴡɴʟᴏᴀᴅ",
-                callback_data=f"forceclose {videoid}|{user_id}",
             )
         ],
     ]
