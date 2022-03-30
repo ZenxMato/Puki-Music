@@ -36,7 +36,7 @@ async def gen_thumb(thumbnail, title, userid, theme, ctitle):
     font2 = ImageFont.truetype("Utils/finalfont.ttf", 60)
     draw.text(
         (20, 45),
-        f"Playing: {ctitle[:20]}",
+        f"{ctitle[:10]}",
         fill="white",
         stroke_width=2,
         stroke_fill="white",
@@ -47,7 +47,7 @@ async def gen_thumb(thumbnail, title, userid, theme, ctitle):
         f"{title[:17]}...",
         fill="red",
         stroke_width=2,
-        stroke_fill="black",
+        stroke_fill="white",
         font=font,
     )
     img.save(f"cache/final{userid}.png")
