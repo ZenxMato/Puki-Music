@@ -17,28 +17,18 @@ def others_markup(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="✚ Your Playlist",
-                callback_data=f'playlist {videoid}|{user_id}',
-            ),
-            InlineKeyboardButton(
-                text="✚ Group Playlist",
-                callback_data=f'group_playlist {videoid}|{user_id}',
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="📥 Get Audio",
+                text="🎧 ɢᴇᴛ ᴀᴜᴅɪᴏ",
                 callback_data=f"gets audio|{videoid}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="📥 Get Video",
+                text="🎬 ɢᴇᴛ ᴠɪᴅᴇᴏ",
                 callback_data=f"gets video|{videoid}|{user_id}",
             ),
         ],
         [
             InlineKeyboardButton(
-                text=" 🔙 Go Back",
-                callback_data=f"pr_go_back_timer {videoid}|{user_id}",
+                text="ᴄʟᴏsᴇ",
+                callback_data=f"forceclose {videoid}|{user_id}",
             )
         ],
     ]
@@ -49,17 +39,17 @@ def download_markup(videoid, user_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="📥 Get Audio",
+                text="📥 ɢᴇᴛ ᴀᴜᴅɪᴏ",
                 callback_data=f"gets audio|{videoid}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="📥 Get Video",
+                text="📥 ɢᴇᴛ ᴠɪᴅᴇᴏ",
                 callback_data=f"gets video|{videoid}|{user_id}",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="🔙 Go Back", callback_data=f"goback {videoid}|{user_id}"
+                text="ᴄʟᴏsᴇ", callback_data=f"forceclose {videoid}|{user_id}"
             )
         ],
     ]
