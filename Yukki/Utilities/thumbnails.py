@@ -37,7 +37,7 @@ async def gen_thumb(thumbnail, title, userid, theme, ctitle):
     draw.text(
         (20, 45),
         f"{ctitle[:10]}",
-        fill="white",
+        fill="yellow",
         stroke_width=2,
         stroke_fill="white",
         font=font,
@@ -45,9 +45,9 @@ async def gen_thumb(thumbnail, title, userid, theme, ctitle):
     draw.text(
         (25, 595),
         f"{title[:17]}...",
-        fill="red",
+        fill="green",
         stroke_width=2,
-        stroke_fill="white",
+        stroke_fill="black",
         font=font,
     )
     img.save(f"cache/final{userid}.png")
