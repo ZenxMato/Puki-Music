@@ -7,7 +7,7 @@ from Yukki.Database import is_gbanned_user, is_on_off
 @app.on_message(filters.private & ~filters.user(SUDOERS))
 async def bot_forward(client, message):
     if await is_on_off(5):
-        if message.text == "/play":
+        if message.text == "/start":
             return
         try:
             await app.forward_messages(
@@ -34,7 +34,7 @@ async def chat_watcher_func(_, message):
     checking = f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
     if await is_gbanned_user(userid):
         try:
-            await message.chat.kick_member(userid)
+            await message.chat.ban_member(userid)
         except Exception:
             return
         await message.reply_text(
