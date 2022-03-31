@@ -11,7 +11,7 @@ from Yukki.Utilities.formatters import bytes
 __MODULE__ = "Speedtest"
 __HELP__ = """
 
-/speedtest 
+/vcspeedtest 
 - Check Server Latency and Speed.
 
 """
