@@ -6,7 +6,6 @@ class FFmpegReturnCodeError(Exception):
     pass
 
 
-
 async def convert(file_path: str) -> str:
     out = path.basename(file_path)
     out = out.split(".")
