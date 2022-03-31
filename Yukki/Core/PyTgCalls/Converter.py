@@ -7,7 +7,7 @@ class FFmpegReturnCodeError(Exception):
 
 
 async def convert(file_path: str) -> str:
-    out = path.basename(file_path)
+    out = path.basename(downloaded_file)
     out = out.split(".")
     out[-1] = "raw"
     out = ".".join(out)
