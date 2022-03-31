@@ -27,22 +27,6 @@ from Yukki.Utilities.ping import get_readable_time
 
 welcome_group = 2
 
-__MODULE__ = "Essentials"
-__HELP__ = """
-
-
-/start 
-- Start the Bot.
-
-
-/help 
-- Get Commands Helper Menu.
-
-
-/settings 
-- Get Settings button.
-"""
-
 
 @app.on_message(filters.new_chat_members, group=welcome_group)
 async def welcome(_, message: Message):
@@ -101,7 +85,7 @@ async def useradd(_, message: Message):
     await asyncio.gather(
         message.delete(),
         message.reply_text(
-            f"**⚡ {MUSIC_BOT_NAME} Active!** \n** 💭 Grup: {message.chat.title}**\n**🆔 ID: {message.chat.id}** \n\n**✨{MUSIC_BOT_NAME} ᴍᴇᴍᴜɴɢᴋɪɴᴋᴀɴ ᴀɴᴅᴀ ᴜɴᴛᴜᴋ ᴍᴇᴍᴜᴛᴀʀ ᴍᴜsɪᴋ ᴘᴀᴅᴀ ɢʀᴜᴘ ᴍᴇʟᴀʟᴜɪ ᴏʙʀᴏʟᴀɴ sᴜᴀʀᴀ ʏᴀɴɢ ʙᴀʀᴜ ᴅɪ ᴛᴇʟᴇɢʀᴀᴍ.**",
+            f"Thanks for having me in {message.chat.title}.\n{MUSIC_BOT_NAME} is alive.\n\nFor any assistance or help, checkout our support group and channel.",
             reply_markup=InlineKeyboardMarkup(out[1]),
         ),
     )
