@@ -14,7 +14,7 @@ from rich.table import Table
 from config import (ASSISTANT_PREFIX, DURATION_LIMIT_MIN, LOG_GROUP_ID,
                     LOG_SESSION)
 from config import MONGO_DB_URI as mango
-from config import (START_IMG_URL, MUSIC_BOT_NAME, OWNER_ID, STRING1, STRING2, STRING3,
+from config import (MUSIC_BOT_NAME, OWNER_ID, STRING1, STRING2, STRING3,
                     STRING4, STRING5, SUDO_USERS, UPSTREAM_BRANCH,
                     UPSTREAM_REPO, get_queue)
 from Yukki.Core.Clients.cli import (ASS_CLI_1, ASS_CLI_2, ASS_CLI_3, ASS_CLI_4,
@@ -58,7 +58,6 @@ LOG_GROUP_ID = LOG_GROUP_ID
 MUSIC_BOT_NAME = MUSIC_BOT_NAME
 DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
 ASSISTANT_PREFIX = ASSISTANT_PREFIX
-START_IMG_URL = START_IMG_URL
 
 ### Bot Info
 BOT_ID = 0
