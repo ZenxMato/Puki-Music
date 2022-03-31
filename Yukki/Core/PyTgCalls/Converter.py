@@ -1,11 +1,7 @@
 import asyncio
 from os import path
-
-
 class FFmpegReturnCodeError(Exception):
     pass
-
-
 async def convert(file_path: str) -> str:
     out = path.basename(file_path)
     out = out.split(".")
@@ -24,11 +20,9 @@ async def convert(file_path: str) -> str:
             stderr=asyncio.subprocess.PIPE,
         )
 
-        await proc.communicate()
-
+     await proc.communicate()
         if proc.returncode != 0:
             raise FFmpegReturnCodeError("FFmpeg did not return 0")
-
         return out
     except:
         raise FFmpegReturnCodeError("FFmpeg did not return 0")
