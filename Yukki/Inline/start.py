@@ -164,9 +164,6 @@ def private_panel():
                     "❔ ᴛᴀᴍʙᴀʜᴋᴀɴ sᴀʏᴀ", 
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
                 ),
-                InlineKeyboardButton (
-                    "☕ ᴅᴏɴᴀsɪ", url=f"https://t.me/zenzuzu"
-                ),
             ],
             [
                 InlineKeyboardButton(
