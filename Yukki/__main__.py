@@ -244,7 +244,7 @@ home_text_pm = f"""**✨ Selamat Datang di {BOT_NAME}
 
 💬 {BOT_NAME} memungkinkan anda untuk memutar musik pada grup melalui obrolan suara yang baru di Telegram!
 
-💡 Tambahkan Saya Kedalam Groups Kamu!
+💡 Tambahkan Saya Kedalam Groups Kamu!**
 """
 
 
